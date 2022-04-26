@@ -1,138 +1,115 @@
 .contenedor-general {
   height: 100vh;
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 70px 1fr;
   grid-template-areas: "cabecera" "cuerpo";
 
-    .contenedor-cabecera{
+  .contenedor-cabecera {
+    height: 100%;
+    grid-area: cabecera;
+
+    display: grid;
+    grid-template-columns: 1fr 400px;
+
+    .contenedor-filtros {
+      height: 100%;
+      padding-left: 10px;
+      display: flex;
+      color: whitesmoke;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      background-color: var(--azul-beat);
+      .contenido-filtro {
         height: 100%;
-        grid-area: cabecera;
-        
-        display: grid;
-        grid-template-columns: 1fr 350px;
-        .contenedor-filtros{
-            height: 100%;
-            background-color: var(--azul-beat);
-            border: 2px solid black;
+        display: flex;
+        gap: 2px;
+        justify-content: flex-start;
+
+        .vaciar {
+          margin-top: 25px;
         }
-        .contenedor-botones{
-            height: 100%;
-            background-color: var(--rojo-beat);
-            border: 2px solid black;
-            .cuerpo-modal{
-                display:flex;
-                flex-direction: column;
-                width: 100%;
-                gap: 0.5rem;
-                padding: 0.5rem;
-                .seccion-1{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 0.5rem;
-                    .etiqueta-alias{
-                        width: 50%;
-                    }
-                    .etiqueta-comercial{
-                        width: 50%;
-                    }
-                }
-                .seccion-2{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 0.5rem;
-                }
-                .seccion-3{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 0.5rem;
-                    .etiqueta-direccion{
-                        width: 50%;
-                    }
-                    .etiqueta-correo{
-                        width: 50%;
-                    }
-                }
-                .seccion-4{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 0.5rem;
-                    .etiqueta-telefono{
-                        width: 50%;
-                    }
-                    .etiqueta-documento{
-                        width: 50%;
-                    }
-                }
-                .seccion-5{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 0.5rem;
-                    .etiqueta-razon_social{
-                        width: 100%;
-                    }
-                }
-            }
+      }
+      .boton-filtro {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+
+        .limpiar {
+          margin-top: 25px;
         }
+        .buscar {
+          margin-top: 25px;
+        }
+      }
     }
     .contenedor-botones {
       height: 100%;
-      background-color: var(--rojo-beat);
-      border: 2px solid black;
-      .cuerpo-modal {
+      background-color: var(--azul-beat);
+      .boton-filtro {
+        height: 100%;
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        justify-content: center;
         gap: 0.5rem;
-        padding: 0.5rem;
-        .seccion-1 {
-          display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
-          .etiqueta-alias {
-            width: 50%;
-          }
-          .etiqueta-comercial {
-            width: 50%;
-          }
+
+        .limpiar {
+          margin-top: 25px;
         }
-        .seccion-2 {
-          display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
-        }
-        .seccion-3 {
-          display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
-          .etiqueta-direccion {
-            width: 50%;
-          }
-          .etiqueta-correo {
-            width: 50%;
-          }
-        }
-        .seccion-4 {
-          display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
-          .etiqueta-telefono {
-            width: 50%;
-          }
-          .etiqueta-documento {
-            width: 50%;
-          }
-        }
-        .seccion-5 {
-          display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
-          .etiqueta-razon_social {
-            width: 100%;
-          }
+        .buscar {
+          margin-top: 25px;
         }
       }
     }
   }
+  .contenedor-cuerpo {
+    height: 100%;
+    grid-area: cuerpo;
+    display: grid;
+
+    grid-template-columns: 1fr 450px;
+
+    .contenedor-tarjeta {
+      height: 100%;
+
+      background-color: var(--verde-beat);
+      display: flex;
+      padding: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .contenedor-dato {
+      height: 100%;
+      border: 2px solid black;
+      background-color: var(--naranja-beat);
+      .titulo-vaciar {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 2px;
+      }
+      .datos-personales {
+        margin: 5px;
+        padding: 5px;
+        border: 2px grey solid;
+        border-radius: 20px;
+        h4 {
+          text-decoration: underline black;
+        }
+      }
+      .datos-contacto {
+        margin: 5px;
+        padding: 5px;
+        border: 2px grey solid;
+        border-radius: 20px;
+
+        h4 {
+          text-decoration: underline black;
+        }
+      }
+    }
+  }
+
   .contenedor-cuerpo {
     height: 100%;
     grid-area: cuerpo;
@@ -144,35 +121,17 @@
       height: 100%;
       border: 2px solid black;
       background-color: var(--verde-beat);
+      display: flex;
+      padding: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 0.5rem;
     }
     .contenedor-dato {
       height: 100%;
       border: 2px solid black;
       background-color: var(--naranja-beat);
     }
-  }
-
-.contenedor-cuerpo {
-  height: 100%;
-  grid-area: cuerpo;
-  display: grid;
-  border: 2px solid black;
-  grid-template-columns: 1fr 450px;
-
-  .contenedor-tarjeta {
-    height: 100%;
-    border: 2px solid black;
-    background-color: var(--verde-beat);
-    display: flex;
-    padding: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .contenedor-dato {
-    height: 100%;
-    border: 2px solid black;
-    background-color: var(--naranja-beat);
   }
 }
