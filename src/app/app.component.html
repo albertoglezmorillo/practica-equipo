@@ -77,9 +77,9 @@
           ></app-boton>
           <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
         </div>
-        <app-input [etiqueta]="'Direccion:'"></app-input>
-        <app-input [etiqueta]="'Poblacion:'"></app-input>
-        <app-input [etiqueta]="'Provincia:'"></app-input>
+        <app-input [etiqueta]="'Direccion:'" [valorInput]="clienteSeleccionado.direccion"></app-input>
+        <app-input [etiqueta]="'Poblacion:'" [valorInput]="clienteSeleccionado.poblacion"></app-input>
+        <app-input [etiqueta]="'Provincia:'"[valorInput]="clienteSeleccionado.provincia"></app-input>
         <app-input [etiqueta]="'Codigo Postal:'"></app-input>
         <app-input [etiqueta]="'Telefono:'"></app-input>
         <app-input [etiqueta]="'Email:'"></app-input>

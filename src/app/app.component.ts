@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { cliente } from './models/cliente.model';
 import { ClienteService } from './services/cliente.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { ClienteService } from './services/cliente.service';
 export class AppComponent {
   title = 'practica-equipo';
   prueba:any = [1,2,3,4,5,6,7,8,9,10];
-  clientes:any[]= [];
+  clientes: cliente[]= [];
+  clienteSeleccionado: cliente=new cliente({});
   filtros = {
     alias: '',
     activo: '',
@@ -21,7 +23,9 @@ export class AppComponent {
   constructor(public clienteSvc:ClienteService){
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
+
         this.clientes = data.data;
+        this.clienteSeleccionado=this.clientes[0];
       },
       (error) => {
         alert(error.error.message);
