@@ -12,7 +12,7 @@ import { TarjetaClienteComponent } from './componentes/tarjeta-cliente/tarjeta-c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
