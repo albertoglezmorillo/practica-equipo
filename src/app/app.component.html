@@ -142,11 +142,10 @@
   </div>
   <div class="contenedor-cuerpo">
     <div class="contenedor-tarjeta">
-      <app-tarjeta-cliente *ngFor="let i of prueba" class="tarjetas"></app-tarjeta-cliente>
+      <app-tarjeta-cliente *ngFor="let i of clientes,index as posicion " class="tarjetas" [cliente] = i></app-tarjeta-cliente>
     </div>
     <div class="contenedor-dato">
       <p>contenedor dato del cliente</p>
-      <p>{{clientes[0]|json}}</p>
     </div>
   </div>
 </div>
