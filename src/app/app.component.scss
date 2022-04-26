@@ -1,47 +1,48 @@
-.contenedor-general{
-    height: 100vh;
+.contenedor-general {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "cabecera" "cuerpo";
+
+  .contenedor-cabecera {
+    height: 100%;
+    grid-area: cabecera;
+
     display: grid;
-    grid-template-rows: 60px 1fr;
-    grid-template-areas: "cabecera" "cuerpo";
-
-    .contenedor-cabecera{
-        height: 100%;
-        grid-area: cabecera;
-        
-        display: grid;
-        grid-template-columns: 1fr 350px;
-        .contenedor-filtros{
-            height: 100%;
-            background-color: var(--azul-beat);
-            border: 2px solid black;
-        }
-        .contenedor-botones{
-            height: 100%;
-            background-color: var(--rojo-beat);
-            border: 2px solid black;
-        }
+    grid-template-columns: 1fr 350px;
+    .contenedor-filtros {
+      height: 100%;
+      background-color: var(--azul-beat);
+      border: 2px solid black;
     }
-    .contenedor-cuerpo{
-        height: 100%;
-        grid-area: cuerpo;
-        display: grid;
-        border: 2px solid black;
-        grid-template-columns: 1fr 450px;
-      
-
-        .contenedor-tarjeta{
-            height: 100%;
-            border: 2px solid black;
-            background-color: var(--verde-beat);
-            
-
-
-        }
-        .contenedor-dato{
-            height: 100%;
-            border: 2px solid black;
-            background-color: var(--naranja-beat);
-        }
-
+    .contenedor-botones {
+      height: 100%;
+      background-color: var(--rojo-beat);
+      border: 2px solid black;
     }
+  }
+  .contenedor-cuerpo {
+    height: 100%;
+    grid-area: cuerpo;
+    display: grid;
+    border: 2px solid black;
+    grid-template-columns: 1fr 450px;
+
+    .contenedor-tarjeta {
+      height: 100%;
+      border: 2px solid black;
+      background-color: var(--verde-beat);
+      display: flex;
+      padding: 0.5rem;
+      flex-wrap: wrap;
+      justify-content:space-around;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .contenedor-dato {
+      height: 100%;
+      border: 2px solid black;
+      background-color: var(--naranja-beat);
+    }
+  }
 }
