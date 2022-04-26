@@ -4,14 +4,6 @@
   grid-template-rows: 60px 1fr;
   grid-template-areas: "cabecera" "cuerpo";
 
-  .contenedor-cabecera {
-    height: 100%;
-    grid-area: cabecera;
-
-    display: grid;
-    grid-template-rows: 60px 1fr;
-    grid-template-areas: "cabecera" "cuerpo";
-
     .contenedor-cabecera{
         height: 100%;
         grid-area: cabecera;
@@ -131,4 +123,4 @@
       background-color: var(--naranja-beat);
     }
   }
-}
+
