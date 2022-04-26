@@ -16,13 +16,15 @@ import { ClienteService } from './services/cliente.service';
     AppComponent,
     TarjetaClienteComponent,
     BotonComponent,
-    InputComponent
+    InputComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule
+    
   ],
   providers: [ClienteService],
   bootstrap: [AppComponent]
