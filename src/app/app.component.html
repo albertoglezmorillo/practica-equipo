@@ -1,15 +1,91 @@
 <div class="contenedor-general">
   <div class="contenedor-cabecera">
-    <div class="contenedor-filtros">Filtros</div>
-    <div class="contenedor-botones">Botones</div>
+    <div class="contenedor-filtros">
+      <div class="contenido-filtro">
+        <app-input [etiqueta]="'Num Cliente:'"></app-input>
+        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+      </div>
+      <div class="contenido-filtro">
+        <app-input [etiqueta]="'Alias:'"></app-input>
+        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+      </div>
+      <div class="contenido-filtro">
+        <app-input [etiqueta]="'Provincia:'"></app-input>
+        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+      </div>
+      <div class="contenido-filtro">
+        <app-input [etiqueta]="'Documento:'"></app-input>
+        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+      </div>
+
+      
+    </div>
+
+    <div class="contenedor-botones">
+      <div class="boton-filtro">
+        <app-boton
+          class="limpiar"
+          [estilo]="'1'"
+          [etiqueta]="'Limpiar Filtros'"
+        ></app-boton>
+        <app-boton
+          class="buscar"
+          [estilo]="'4'"
+          [etiqueta]="'Buscar'"
+        ></app-boton>
+        <app-boton
+          class="buscar"
+          [estilo]="'2'"
+          [etiqueta]="'Crear Usuario'"
+        ></app-boton>
+      </div>
+    </div>
   </div>
   <div class="contenedor-cuerpo">
     <div class="contenedor-tarjeta">
-      <app-tarjeta-cliente *ngFor="let i of prueba" class="tarjetas"></app-tarjeta-cliente>
+      <app-tarjeta-cliente
+        *ngFor="let i of prueba"
+        class="tarjetas"
+      ></app-tarjeta-cliente>
     </div>
     <div class="contenedor-dato">
-      <p>contenedor dato del cliente</p>
-      <app-input></app-input>
+      <div class="datos-personales">
+        <div class="titulo-vaciar">
+          <h4>Datos Personales</h4>
+          <app-boton
+            class="vaciar-Datos"
+            [etiqueta]="'Vaciar'"
+            [estilo]="'1'"
+          ></app-boton>
+          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
+        </div>
+        <app-input [etiqueta]="'Numero de cliente'"></app-input>
+
+        <app-input [etiqueta]="'Nombre:'"></app-input>
+
+        <app-input [etiqueta]="'Alias'"></app-input>
+
+        <app-input [etiqueta]="'Documento:'"></app-input>
+      </div>
+      <div class="datos-contacto">
+        <div class="titulo-vaciar">
+          <h4>Datos de Contacto</h4>
+          <app-boton
+            class="vaciar-Datos"
+            [etiqueta]="'Vaciar'"
+            [estilo]="'1'"
+          ></app-boton>
+          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
+        </div>
+        <app-input [etiqueta]="'Direccion:'"></app-input>
+        <app-input [etiqueta]="'Poblacion:'"></app-input>
+        <app-input [etiqueta]="'Provincia:'"></app-input>
+        <app-input [etiqueta]="'Codigo Postal:'"></app-input>
+        <app-input [etiqueta]="'Telefono:'"></app-input>
+        <app-input [etiqueta]="'Email:'"></app-input>
+        <app-input [etiqueta]="'Comercial:'"></app-input>
+        <app-input [etiqueta]="'Razon Social:'"></app-input>
+      </div>
     </div>
   </div>
 </div>
