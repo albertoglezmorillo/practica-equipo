@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { TarjetaClienteComponent } from './components/tarjeta-cliente/tarjeta-cliente.component';
 import { BotonComponent } from './components/boton/boton.component';
 import { InputComponent } from './components/input/input.component';
+import { HttpClientModule } from "@angular/common/http";
+import { ClienteService } from './services/cliente.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,10 +20,11 @@ import { InputComponent } from './components/input/input.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
