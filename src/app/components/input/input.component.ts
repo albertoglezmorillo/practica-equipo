@@ -11,4 +11,6 @@ export class InputComponent  {
   @Input() valorInput:any = '';
   @Input() botonBorrar:boolean = false;
   @Input() maximoCaracteres:number = 100;
+  @Input() size:string = '';
+
 }
