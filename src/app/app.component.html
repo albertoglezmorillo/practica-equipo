@@ -44,6 +44,7 @@
         *ngFor="let i of clientes"
         class="tarjetas"
         [cliente]="i"
+        (click)="mostrarSeleccionado(i)"
       ></app-tarjeta-cliente>
     </div>
     <div class="contenedor-dato">
