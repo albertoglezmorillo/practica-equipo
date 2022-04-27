@@ -42,8 +42,9 @@
   <div class="contenedor-cuerpo">
     <div class="contenedor-tarjeta">
       <app-tarjeta-cliente
-        *ngFor="let i of prueba"
+        *ngFor="let i of clientes"
         class="tarjetas"
+        [cliente]="i"
       ></app-tarjeta-cliente>
     </div>
     <div class="contenedor-dato">
@@ -77,9 +78,9 @@
           [valorInput]="clienteSeleccionado.alias"
         ></app-input>
         <label for="Notas">Notas: </label>
-        <textarea
-        class="form-control notas" name="textarea" >{{clienteSeleccionado.notas}}</textarea>
-       
+        <textarea class="form-control notas" name="textarea">{{
+          clienteSeleccionado.notas
+        }}</textarea>
       </div>
       <div class="datos-contacto">
         <div class="titulo-vaciar">
@@ -129,7 +130,11 @@
           [valorInput]="clienteSeleccionado.razon_social"
         ></app-input>
       </div>
-      <app-boton class="boton-crear" [estilo]="'2'" [etiqueta]="'Crear'"></app-boton>
+      <app-boton
+        class="boton-crear"
+        [estilo]="'2'"
+        [etiqueta]="'Crear'"
+      ></app-boton>
     </div>
   </div>
 </div>
