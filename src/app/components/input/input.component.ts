@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 export class InputComponent  {
   @Input() estilo:string = '';
   @Input() etiqueta:string = '';
-  @Input()valorInput:string = '';
+  @Input() valorInput:string = '';
 
 }

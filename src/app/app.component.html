@@ -59,13 +59,13 @@
           ></app-boton>
           <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
         </div>
-        <app-input [etiqueta]="'Numero de cliente'"></app-input>
+        <app-input [etiqueta]="'Numero de cliente'" ></app-input>
 
-        <app-input [etiqueta]="'Nombre:'"></app-input>
+        <app-input [etiqueta]="'Nombre:'" [valorInput]="clienteSeleccionado.nombre"></app-input>
 
-        <app-input [etiqueta]="'Alias'"></app-input>
+        <app-input [etiqueta]="'Alias'" [valorInput]="clienteSeleccionado.alias"></app-input>
 
-        <app-input [etiqueta]="'Documento:'"></app-input>
+        <app-input [etiqueta]="'Documento:'" [valorInput]="clienteSeleccionado.documento"></app-input>
       </div>
       <div class="datos-contacto">
         <div class="titulo-vaciar">
@@ -80,11 +80,11 @@
         <app-input [etiqueta]="'Direccion:'" [valorInput]="clienteSeleccionado.direccion"></app-input>
         <app-input [etiqueta]="'Poblacion:'" [valorInput]="clienteSeleccionado.poblacion"></app-input>
         <app-input [etiqueta]="'Provincia:'"[valorInput]="clienteSeleccionado.provincia"></app-input>
-        <app-input [etiqueta]="'Codigo Postal:'"></app-input>
-        <app-input [etiqueta]="'Telefono:'"></app-input>
-        <app-input [etiqueta]="'Email:'"></app-input>
-        <app-input [etiqueta]="'Comercial:'"></app-input>
-        <app-input [etiqueta]="'Razon Social:'"></app-input>
+        <app-input [etiqueta]="'Codigo Postal:'" ></app-input>
+        <app-input [etiqueta]="'Telefono:'" ></app-input>
+        <app-input [etiqueta]="'Email:'" [valorInput]="clienteSeleccionado.email"></app-input>
+        <app-input [etiqueta]="'Comercial:'" [valorInput]="clienteSeleccionado.comercial"></app-input>
+        <app-input [etiqueta]="'Razon Social:'" [valorInput]="clienteSeleccionado.razon_social"></app-input>
       </div>
     </div>
   </div>
