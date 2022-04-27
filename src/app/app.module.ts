@@ -25,6 +25,7 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
     HttpClientModule,
     FormsModule,
     AppRoutingModule
+    
   ],
   providers: [ClienteService],
   bootstrap: [AppComponent]
