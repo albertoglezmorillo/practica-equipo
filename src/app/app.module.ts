@@ -9,6 +9,7 @@ import { BotonComponent } from './components/boton/boton.component';
 import { InputComponent } from './components/input/input.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ClienteService } from './services/cliente.service';
+import { TextAreaComponent } from './components/text-area/text-area.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { ClienteService } from './services/cliente.service';
     TarjetaClienteComponent,
     BotonComponent,
     InputComponent,
-    
+    TextAreaComponent,
   ],
   imports: [
     BrowserModule,
