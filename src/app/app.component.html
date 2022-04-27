@@ -2,20 +2,16 @@
   <div class="contenedor-cabecera">
     <div class="contenedor-filtros">
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Num Cliente:'"></app-input>
-        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+        <app-input [etiqueta]="'Num Cliente:'" [botonBorrar]="true" [size]="'sm'"></app-input>
       </div>
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Alias:'"></app-input>
-        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+        <app-input [etiqueta]="'Alias:'" [botonBorrar]="true" [size]="'sm'"></app-input>
       </div>
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Provincia:'"></app-input>
-        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+        <app-input [etiqueta]="'Provincia:'" [botonBorrar]="true" [size]="'sm'"></app-input>
       </div>
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Documento:'"></app-input>
-        <app-boton class="vaciar" [estilo]="'3'" [etiqueta]="'X'"></app-boton>
+        <app-input [etiqueta]="'Documento:'" [botonBorrar]="true" [size]="'sm'"></app-input>
       </div>
     </div>
 
@@ -36,6 +32,11 @@
           [estilo]="'2'"
           [etiqueta]="'Crear Usuario'"
         ></app-boton>
+        <app-boton
+          class="buscar"
+          [estilo]="'3'"
+          [etiqueta]="'borrar'"
+        ></app-boton>
       </div>
     </div>
   </div>
@@ -48,7 +49,7 @@
       ></app-tarjeta-cliente>
     </div>
     <div class="contenedor-dato">
-      <div class="datos-personales">
+      <div class="datos">
         <div class="titulo-vaciar">
           <h4>Datos Personales</h4>
           <app-boton
@@ -56,8 +57,8 @@
             [etiqueta]="'Vaciar'"
             [estilo]="'1'"
           ></app-boton>
-          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
         </div>
+
         <div class="seccion">
           <app-input
             [etiqueta]="'Numero de cliente'"
@@ -77,19 +78,26 @@
           [etiqueta]="'Alias'"
           [valorInput]="clienteSeleccionado.alias"
         ></app-input>
-        <label for="Notas">Notas: </label>
-        <app-text-area [valorInput]="clienteSeleccionado.notas"></app-text-area>
+
+        <app-text-area
+          [etiqueta]="'Notas:'"
+          [valorInput]="clienteSeleccionado.notas"
+        ></app-text-area>
+        <div class="boton-datos">
+          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
+        </div>
       </div>
-      <div class="datos-contacto">
+      <div class="datos">
         <div class="titulo-vaciar">
           <h4>Datos de Contacto</h4>
+
           <app-boton
             class="vaciar-Datos"
             [etiqueta]="'Vaciar'"
             [estilo]="'1'"
           ></app-boton>
-          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
         </div>
+
         <app-input
           [etiqueta]="'Direccion:'"
           [valorInput]="clienteSeleccionado.direccion"
@@ -127,10 +135,10 @@
           [etiqueta]="'Razon Social:'"
           [valorInput]="clienteSeleccionado.razon_social"
         ></app-input>
-     
-     
+        <div class="boton-datos">
+          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
+        </div>
       </div>
-      <app-boton class="boton-borrar" [estilo]="'1'" [etiqueta]="'borrar'"></app-boton>
     </div>
   </div>
 </div>
