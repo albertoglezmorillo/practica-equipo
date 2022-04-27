@@ -24,61 +24,65 @@
         ></button>
       </div>
       <div class="modal-body cuerpo-modal">
-        <div class="seccion-1">
-          <div class="etiqueta-alias">
-            <label for="">Alias:</label>
-            <input type="text" class="form-control" placeholder="prueba1" />
+        <div class="datos">
+            <div class="titulo-vaciar">
+              <h4>Datos Personales</h4>
+            </div>
+            <div class="seccion">
+              <app-input
+                [etiqueta]="'Numero de cliente'"
+              ></app-input>
+              <app-input
+                [etiqueta]="'Documento:'"
+              ></app-input>
+            </div>
+            <app-input
+              [etiqueta]="'Nombre:'"
+            ></app-input>
+    
+            <app-input
+              [etiqueta]="'Alias'"
+            ></app-input>
+    
+            
           </div>
-
-          <div class="etiqueta-comercial">
-            <label for="">Comercial:</label>
-            <input type="text" class="form-control" placeholder="prueba2" />
+          <div class="datos">
+            <div class="titulo-vaciar">
+              <h4>Datos de Contacto</h4>
+            </div>
+            <app-input
+              [etiqueta]="'Direccion:'"
+            ></app-input>
+            <div class="seccion">
+              <app-input
+                [etiqueta]="'Poblacion:'"
+              ></app-input>
+              <app-input
+                [etiqueta]="'Provincia:'"
+              ></app-input>
+              <app-input
+                [etiqueta]="'Codigo Postal:'"
+              ></app-input>
+            </div>
+            <div class="seccion">
+              <app-input
+                [etiqueta]="'Telefono:'"
+              ></app-input>
+              <app-input
+                [etiqueta]="'Comercial:'"
+              ></app-input>
+            </div>
+            <app-input
+              [etiqueta]="'Email:'"
+            ></app-input>
+    
+            <app-input
+              [etiqueta]="'Razon Social:'"
+            ></app-input>
+            <app-text-area
+              [etiqueta]="'Notas:'"
+            ></app-text-area>
           </div>
-        </div>
-
-        <div class="seccion-2">
-          <div class="etiqueta-poblacion">
-            <label for="">Poblacion:</label>
-            <input type="text" class="form-control" placeholder="prueba3" />
-          </div>
-          <div class="etiqueta-localidad">
-            <label for="">Localidad:</label>
-            <input type="text" class="form-control" placeholder="prueba5" />
-          </div>
-          <div class="etiqueta-cod_postal">
-            <label for="">Codigo postal:</label>
-            <input type="text" class="form-control" placeholder="prueba5" />
-          </div>
-        </div>
-
-        <div class="seccion-3">
-          <div class="etiqueta-direccion">
-            <label for="">Direccion:</label>
-            <input type="text" class="form-control" placeholder="prueba5" />
-          </div>
-          <div class="etiqueta-correo">
-            <label for="">Correo:</label>
-            <input type="text" class="form-control" placeholder="prueba5" />
-          </div>
-        </div>
-
-        <div class="seccion-4">
-          <div class="etiqueta-telefono">
-            <label for="">Telefono:</label>
-            <input type="text" class="form-control" placeholder="prueba4" />
-          </div>
-          <div class="etiqueta-documento">
-            <label for="">Documento:</label>
-            <input type="text" class="form-control" placeholder="prueba5" />
-          </div>
-        </div>
-
-        <div class="seccion-5">
-          <div class="etiqueta-razon_social">
-            <label for="">Razon social:</label>
-            <input type="text" class="form-control" placeholder="prueba5" />
-          </div>
-        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

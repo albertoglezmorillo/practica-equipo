@@ -70,6 +70,7 @@
     overflow-y: hidden;
 
     .contenedor-tarjeta {
+      min-width: 500px;
       height: 100%;
       display: flex;
       padding: 0.5rem;
@@ -77,6 +78,7 @@
       justify-content: left;
       gap: 2rem;
       overflow-y: auto;
+      overflow-x: hidden;
     }
     .contenedor-dato {
       height: 100%;
