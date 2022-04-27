@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { cliente } from 'src/app/models/cliente.model';
 
 @Component({
   selector: 'app-tarjeta-cliente',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TarjetaClienteComponent implements OnInit {
 
   constructor() { }
-  @Input() cliente:any = {}
+  @Input() cliente:cliente = new cliente({})
   ngOnInit(): void {
   }
 
