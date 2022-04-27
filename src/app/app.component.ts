@@ -25,11 +25,53 @@ export class AppComponent {
       (data) => {
 
         this.clientes = data.data;
+        this.ordenarPorId();
         this.clienteSeleccionado=this.clientes[0];
       },
       (error) => {
         alert(error.error.message);
       }
     );
+  }
+  ordenarPorId(){
+    this.clientes.sort(function (a: cliente, b: cliente) {
+      if (a.alias > b.alias) {
+        return 1;
+      }
+      if (a.alias < b.alias) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  mostrarSeleccionado(item: cliente) {
+
+    this.clienteSeleccionado = item;
+    // this.reiniciarValores();
+    console.log("cliente seleccionado",this.clienteSeleccionado);
+
+  }
+  
+  recargarDatos() {
+    let filtros = {
+      alias: '',
+      activo: '',
+      provincia: '',
+      documento: '',
+      codigo: ''
+    }
+    this.clienteSvc.getCliente(filtros).subscribe(
+      (data) => {
+        console.log(data);
+
+        this.clientes = data.data;
+
+        this.ordenarPorId();
+        this.clienteSeleccionado = this.clientes[0]
+      },
+      (error) => { alert("Los datos no han podido cargarse"); }
+
+    )
   }
 }
