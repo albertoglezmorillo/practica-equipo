@@ -3,13 +3,12 @@
   display: grid;
   grid-template-rows: 70px 1fr;
   grid-template-areas: "cabecera" "cuerpo";
+  overflow-y: hidden;
 
   .contenedor-cabecera {
     height: 100%;
     grid-area: cabecera;
     background-color: var(--azul-beat);
-    // display: grid;
-    // grid-template-columns: 1fr 450px;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -53,7 +52,6 @@
         display: flex;
         justify-content: center;
         gap: 0.5rem;
-
         .limpiar {
           margin-top: 25px;
         }
@@ -69,6 +67,7 @@
     display: grid;
     padding: 15px;
     grid-template-columns: 1fr 450px;
+    overflow-y: hidden;
 
     .contenedor-tarjeta {
       height: 100%;
@@ -77,12 +76,14 @@
       flex-wrap: wrap;
       justify-content: left;
       gap: 2rem;
+      overflow-y: auto;
     }
     .contenedor-dato {
       height: 100%;
       display: flex;
       flex-direction: column;
       gap: 15px;
+      overflow-y: auto;
       .boton-datos {
         display: flex;
         justify-content: end;
