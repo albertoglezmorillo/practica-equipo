@@ -78,9 +78,7 @@
           [valorInput]="clienteSeleccionado.alias"
         ></app-input>
         <label for="Notas">Notas: </label>
-        <textarea class="form-control notas" name="textarea">{{
-          clienteSeleccionado.notas
-        }}</textarea>
+        <app-text-area [valorInput]="clienteSeleccionado.notas"></app-text-area>
       </div>
       <div class="datos-contacto">
         <div class="titulo-vaciar">
