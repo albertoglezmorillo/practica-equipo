@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-text-area',
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss']
 })
-export class TextAreaComponent implements OnInit {
+export class TextAreaComponent {
 
-  constructor() { }
+  @Input() etiqueta:string = '';
+  @Input() valorInput:any = '';
+  @Input() maximoCaracteres:number = 100;
 
-  ngOnInit(): void {
-  }
 
 }
