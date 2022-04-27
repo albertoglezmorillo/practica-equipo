@@ -141,28 +141,5 @@
     }
   }
 
-  .contenedor-cuerpo {
-    height: 100%;
-    grid-area: cuerpo;
-    display: grid;
-    
-    grid-template-columns: 1fr 450px;
-
-    .contenedor-tarjeta {
-      overflow-y: auto ;
-      height: 100%;
-      background-color: var(--verde-beat);
-      display: flex;
-      padding: 0.5rem;
-      flex-wrap:wrap;
-      justify-content: flex-start;
-      align-items:center;
-      gap: 1rem;
-    }
-    .contenedor-dato {
-      height: 100%;
-     
-      background-color: var(--naranja-beat);
-    }
-  }
+  
 }
