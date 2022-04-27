@@ -8,59 +8,25 @@
     height: 100%;
     grid-area: cabecera;
     background-color: var(--azul-beat);
-    // display: grid;
-    // grid-template-columns: 1fr 450px;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    padding: 10px 15px;
     .contenedor-filtros {
       height: 100%;
-      padding-left: 10px;
-      display: flex;
-      color: whitesmoke;
-      justify-content: flex-start;
       gap: 0.5rem;
-
+      display: flex;
+      align-items: flex-end;
       .contenido-filtro {
-        height: 100%;
-        display: flex;
-        gap: 2px;
-        justify-content: flex-start;
-
-        .vaciar {
-          margin-top: 25px;
-        }
-      }
-      .boton-filtro {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-
-        .limpiar {
-          margin-top: 25px;
-        }
-        .buscar {
-          margin-top: 25px;
-        }
+        color: whitesmoke;
       }
     }
     .contenedor-botones {
       height: 100%;
-      padding-right: 20px;
-      .boton-filtro {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-
-        .limpiar {
-          margin-top: 25px;
-        }
-        .buscar {
-          margin-top: 25px;
-        }
-      }
+      display: flex;
+      justify-content: right;
+      gap: 0.5rem;
+      align-items: flex-end;
     }
   }
   .contenedor-cuerpo {
