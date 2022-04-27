@@ -1,0 +1,91 @@
+<app-boton
+  class="buscar"
+  [estilo]="'2'"
+  [etiqueta]="'Crear Usuario'"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+></app-boton>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear Cliente</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body cuerpo-modal">
+        <div class="seccion-1">
+          <div class="etiqueta-alias">
+            <label for="">Alias:</label>
+            <input type="text" class="form-control" placeholder="prueba1" />
+          </div>
+
+          <div class="etiqueta-comercial">
+            <label for="">Comercial:</label>
+            <input type="text" class="form-control" placeholder="prueba2" />
+          </div>
+        </div>
+
+        <div class="seccion-2">
+          <div class="etiqueta-poblacion">
+            <label for="">Poblacion:</label>
+            <input type="text" class="form-control" placeholder="prueba3" />
+          </div>
+          <div class="etiqueta-localidad">
+            <label for="">Localidad:</label>
+            <input type="text" class="form-control" placeholder="prueba5" />
+          </div>
+          <div class="etiqueta-cod_postal">
+            <label for="">Codigo postal:</label>
+            <input type="text" class="form-control" placeholder="prueba5" />
+          </div>
+        </div>
+
+        <div class="seccion-3">
+          <div class="etiqueta-direccion">
+            <label for="">Direccion:</label>
+            <input type="text" class="form-control" placeholder="prueba5" />
+          </div>
+          <div class="etiqueta-correo">
+            <label for="">Correo:</label>
+            <input type="text" class="form-control" placeholder="prueba5" />
+          </div>
+        </div>
+
+        <div class="seccion-4">
+          <div class="etiqueta-telefono">
+            <label for="">Telefono:</label>
+            <input type="text" class="form-control" placeholder="prueba4" />
+          </div>
+          <div class="etiqueta-documento">
+            <label for="">Documento:</label>
+            <input type="text" class="form-control" placeholder="prueba5" />
+          </div>
+        </div>
+
+        <div class="seccion-5">
+          <div class="etiqueta-razon_social">
+            <label for="">Razon social:</label>
+            <input type="text" class="form-control" placeholder="prueba5" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="button" class="btn btn-success">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>

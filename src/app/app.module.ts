@@ -10,6 +10,7 @@ import { InputComponent } from './components/input/input.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ClienteService } from './services/cliente.service';
 import { TextAreaComponent } from './components/text-area/text-area.component';
+import { ModalCreacionComponent } from './components/modal-creacion/modal-creacion.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
     BotonComponent,
     InputComponent,
     TextAreaComponent,
+    ModalCreacionComponent,
   ],
   imports: [
     BrowserModule,
