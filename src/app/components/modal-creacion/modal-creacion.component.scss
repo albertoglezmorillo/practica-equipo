@@ -8,35 +8,7 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        
-        .etiqueta-alias{
-            width: 100%;
-        }
-        .etiqueta-comercial{
-            width: 100%;
-        }
-        .etiqueta-poblacion{
-            width: 100%;
-        }
-        .etiqueta-localidad{
-            width: 100%;
-        }
-        .etiqueta-cod_postal{
-            width: 100%;
-        }
-        .etiqueta-direccion{
-            width: 100%;
-        }
-        .etiqueta-correo{
-            width: 100%;
-        }
-        .etiqueta-telefono{
-            width: 100%;
-        }
-        .etiqueta-documento{
-            width: 100%;
-        }
-        .etiqueta-razon_social{
+        app-input{
             width: 100%;
         }
     }
