@@ -13,4 +13,22 @@ export class BotonComponent {
   accionBoton(){
     this.enviarAccion.emit();
   }
+
+  cambiarEstilo():string{
+    switch (this.estilo) {
+      case '1':
+        return 'btn-warning';
+        break;
+      case '2':
+        return 'btn-success';
+        break;
+      case '3':
+        return 'btn-dark';
+        break;
+    
+      default:
+        return 'btn-primary';
+        break;
+    }
+  }
 }

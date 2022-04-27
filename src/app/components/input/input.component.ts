@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class InputComponent  {
   @Input() estilo:string = '';
   @Input() etiqueta:string = '';
-  @Input()valorInput:string = '';
-
+  @Input() valorInput:any = '';
+  @Input() botonBorrar:boolean = false;
+  @Input() maximoCaracteres:number = 100;
 }
