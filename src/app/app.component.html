@@ -2,16 +2,16 @@
   <div class="contenedor-cabecera">
     <div class="contenedor-filtros">
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Num Cliente:'" [botonBorrar]="true" [size]="'sm'"></app-input>
+        <app-input [etiqueta]="'Num Cliente:'" [botonBorrar]="true" [size]="'sm'" (valorInput)="filtros.codigo"></app-input>
       </div>
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Alias:'" [botonBorrar]="true" [size]="'sm'"></app-input>
+        <app-input [etiqueta]="'Alias:'" [botonBorrar]="true" [size]="'sm'" (valorInput)="filtros.alias"></app-input>
       </div>
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Provincia:'" [botonBorrar]="true" [size]="'sm'"></app-input>
+        <app-input [etiqueta]="'Provincia:'" [botonBorrar]="true" [size]="'sm'" (ngModel)="filtros.provincia" ></app-input>
       </div>
       <div class="contenido-filtro">
-        <app-input [etiqueta]="'Documento:'" [botonBorrar]="true" [size]="'sm'"></app-input>
+        <app-input [etiqueta]="'Documento:'" [botonBorrar]="true" [size]="'sm'" (valorInput)="filtros.documento" ></app-input>
       </div>
     </div>
 
@@ -26,6 +26,7 @@
           class="buscar"
           [estilo]="'4'"
           [etiqueta]="'Buscar'"
+          (click)="buscar()"
         ></app-boton>
         <app-boton
           class="buscar"
@@ -84,7 +85,7 @@
           [valorInput]="clienteSeleccionado.notas"
         ></app-text-area>
         <div class="boton-datos">
-          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
+          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'" (click)="modificar()"></app-boton>
         </div>
       </div>
       <div class="datos">
@@ -136,7 +137,7 @@
           [valorInput]="clienteSeleccionado.razon_social"
         ></app-input>
         <div class="boton-datos">
-          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'"></app-boton>
+          <app-boton [etiqueta]="'Modificar'" [estilo]="'3'" (click)="modificar()"></app-boton>
         </div>
       </div>
     </div>
