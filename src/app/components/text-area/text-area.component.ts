@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-area',
@@ -9,7 +9,11 @@ export class TextAreaComponent {
 
   @Input() etiqueta:string = '';
   @Input() valorInput:any = '';
-  @Input() maximoCaracteres:number = 100;
+  @Input() maximoCaracteres:number = 100; 
+  @Output() changed = new EventEmitter<any>();
 
+  cambioInput(){
+    this.changed.emit(this.valorInput);
+  }
 
 }

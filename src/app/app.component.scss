@@ -2,16 +2,15 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 70px 1fr;
-  grid-template-areas: "cabecera" "cuerpo";
   overflow-y: hidden;
 
   .contenedor-cabecera {
     height: 100%;
-    grid-area: cabecera;
     background-color: var(--azul-beat);
     display: flex;
     justify-content: space-between;
     padding: 10px 15px;
+
     .contenedor-filtros {
       height: 100%;
       gap: 0.5rem;
@@ -31,7 +30,6 @@
   }
   .contenedor-cuerpo {
     height: 100%;
-    grid-area: cuerpo;
     display: grid;
     padding: 15px;
     grid-template-columns: 1fr 450px;

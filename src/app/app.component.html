@@ -1,43 +1,43 @@
 <div class="contenedor-general">
   <div class="contenedor-cabecera">
     <div class="contenedor-filtros">
-      <div class="contenido-filtro">
-        <app-input [etiqueta]="'Num Cliente:'" [botonBorrar]="true" [size]="'sm'" (valorInput)="filtros.codigo"></app-input>
-      </div>
-      <div class="contenido-filtro">
-        <app-input [etiqueta]="'Alias:'" [botonBorrar]="true" [size]="'sm'" (valorInput)="filtros.alias"></app-input>
-      </div>
-      <div class="contenido-filtro">
-        <app-input [etiqueta]="'Provincia:'" [botonBorrar]="true" [size]="'sm'" (ngModel)="filtros.provincia" ></app-input>
-      </div>
-      <div class="contenido-filtro">
-        <app-input [etiqueta]="'Documento:'" [botonBorrar]="true" [size]="'sm'" (valorInput)="filtros.documento" ></app-input>
-      </div>
+      <app-input
+        class="contenido-filtro"
+        [etiqueta]="'Num Cliente:'"
+        [botonBorrar]="true"
+        [size]="'sm'"
+        [valorInput]="filtros.codigo"
+        (changed)="cambioCodigo($event)"
+      ></app-input>
+      <app-input
+        class="contenido-filtro"
+        [etiqueta]="'Alias:'"
+        [botonBorrar]="true"
+        [size]="'sm'"
+      ></app-input>
+      <app-input
+        class="contenido-filtro"
+        [etiqueta]="'Provincia:'"
+        [botonBorrar]="true"
+        [size]="'sm'"
+      ></app-input>
+      <app-input
+        class="contenido-filtro"
+        [etiqueta]="'Documento:'"
+        [botonBorrar]="true"
+        [size]="'sm'"
+      ></app-input>
+      <app-switch (changed)="cambioFiltroActivo($event)"></app-switch>
     </div>
-
     <div class="contenedor-botones">
-      
-        <app-boton
-          class="limpiar"
-          [estilo]="'warning'"
-          [etiqueta]="'Limpiar Filtros'"
-        ></app-boton>
-        <app-boton
-          class="buscar"
-          [estilo]="'4'"
-          [etiqueta]="'Buscar'"
-          (click)="buscar()"
-        ></app-boton>
-        <app-boton
-          class="buscar"
-          [estilo]="'danger'"
-          [etiqueta]="'Borrar'"
-          (click)="eliminar()"
-        ></app-boton>
-        
-        <app-modal-creacion class="buscar"></app-modal-creacion>
-        
-      
+      <app-boton
+        [estilo]="'warning'"
+        [etiqueta]="'Limpiar Filtros'"
+      ></app-boton>
+      <app-boton [etiqueta]="'Buscar'"></app-boton>
+      <app-boton [estilo]="'danger'" [etiqueta]="'Borrar'"></app-boton>
+
+      <app-modal-creacion class="buscar"></app-modal-creacion>
     </div>
   </div>
   <div class="contenedor-cuerpo">
@@ -47,7 +47,8 @@
         class="tarjetas"
         [cliente]="i"
         (click)="mostrarSeleccionado(i)"
-      ></app-tarjeta-cliente>
+      >
+      </app-tarjeta-cliente>
     </div>
     <div class="contenedor-dato">
       <div class="datos">
@@ -85,7 +86,11 @@
           [valorInput]="clienteSeleccionado.notas"
         ></app-text-area>
         <div class="boton-datos">
-          <app-boton [etiqueta]="'Modificar'" [estilo]="'dark-sm'" (click)="modificar()"></app-boton>
+          <app-boton
+            [etiqueta]="'Modificar'"
+            [estilo]="'dark-sm'"
+            (click)="modificar()"
+          ></app-boton>
         </div>
       </div>
       <div class="datos">
@@ -137,7 +142,11 @@
           [valorInput]="clienteSeleccionado.razon_social"
         ></app-input>
         <div class="boton-datos">
-          <app-boton [etiqueta]="'Modificar'" [estilo]="'dark-sm'" (click)="modificar()"></app-boton>
+          <app-boton
+            [etiqueta]="'Modificar'"
+            [estilo]="'dark-sm'"
+            (click)="modificar()"
+          ></app-boton>
         </div>
       </div>
     </div>

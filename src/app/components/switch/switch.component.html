@@ -1,0 +1,6 @@
+<label>{{valor}}</label>
+<div [ngClass]="{'sm':estilo == 'sm'}">
+  <button class="btn  boton-left" (click)="valor = valores[0]" [ngClass]="{'negro': valor == valores[0]}" (click)=" cambioInput('0')"></button>
+  <button class="btn  boton-center" (click)="valor = valores[2]" [ngClass]="{'noMostrar' : numeroSwitch <3,'gris': valor == valores[2]}" (click)=" cambioInput('')" ></button>
+  <button class="btn  boton-right" (click)="valor = valores[1]" [ngClass]="{'azul': valor == valores[1]}" (click)=" cambioInput('1')"></button>
+</div>
