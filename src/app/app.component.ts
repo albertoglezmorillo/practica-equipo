@@ -40,6 +40,8 @@ export class AppComponent {
       }
     );
   }
+
+  
   ordenarPorId() {
     this.clientes.sort(function (a: cliente, b: cliente) {
       if (a.alias > b.alias) {
@@ -59,6 +61,8 @@ export class AppComponent {
     console.log("cliente seleccionado", this.clienteSeleccionado);
 
   }
+
+
   buscar() {
 
     console.log("Num cliente del input", this.filtros.codigo)
@@ -102,8 +106,7 @@ export class AppComponent {
   }
 
   modificar() {
-
-
+    
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
 
