@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ClienteService } from './services/cliente.service';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { ModalCreacionComponent } from './components/modal-creacion/modal-creacion.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ModalCreacionComponent } from './components/modal-creacion/modal-creaci
     InputComponent,
     TextAreaComponent,
     ModalCreacionComponent,
+    SwitchComponent,
   ],
   imports: [
     BrowserModule,

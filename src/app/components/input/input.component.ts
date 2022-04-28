@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,9 +8,17 @@ import { Component, Input } from '@angular/core';
 export class InputComponent  {
   @Input() estilo:string = '';
   @Input() etiqueta:string = '';
-  @Input() valorInput:any = '';
+  @Input() valorInput:any;
   @Input() botonBorrar:boolean = false;
   @Input() maximoCaracteres:number = 100;
   @Input() size:string = '';
+  @Output() changed = new EventEmitter<any>();
 
+  cambioInput(){
+    this.changed.emit(this.valorInput);
+  }
+  borrarInput(){
+    this.valorInput = '';
+    this.changed.emit(this.valorInput);
+  }
 }

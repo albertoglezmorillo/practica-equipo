@@ -33,6 +33,7 @@ export class AppComponent {
       }
     );
   }
+
   ordenarPorId(){
     this.clientes.sort(function (a: cliente, b: cliente) {
       if (a.alias > b.alias) {
@@ -43,6 +44,14 @@ export class AppComponent {
       }
       return 0;
     });
+  }
+
+  cambioCodigo(valor:any){
+    this.filtros.codigo = valor;
+  }
+
+  cambioFiltroActivo(valor:any){
+    this.filtros.activo = valor;
   }
 
   mostrarSeleccionado(item: cliente) {
