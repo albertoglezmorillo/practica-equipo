@@ -74,4 +74,19 @@ export class AppComponent {
 
     )
   }
+
+  eliminar() {
+    let usuarioAborrar = {
+      id: this.clienteSeleccionado.idcliente
+    }
+    console.log(this.clienteSeleccionado.idcliente)
+    this.clienteSvc.deleteCliente(usuarioAborrar).subscribe(
+      (data) => { this.recargarDatos() },
+      (error) => {
+        alert(error.mensaje);
+      }
+    )
+
+
+  }
 }
