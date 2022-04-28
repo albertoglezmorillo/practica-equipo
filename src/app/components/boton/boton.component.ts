@@ -16,14 +16,32 @@ export class BotonComponent {
   }
   cambiarEstilo():string{
     switch (this.estilo) {
-      case '1':
-        return 'btn-warning';
+      case 'warning-sm':
+        return  'btn-sm btn-warning';
         break;
-      case '2':
+      case 'warning':
+        return  'btn-warning';
+        break;
+      case 'success-sm':
+        return 'btn-sm btn-success';
+        break;
+      case 'success':
         return 'btn-success';
         break;
-      case '3':
+      case 'dark-sm':
+        return 'btn-sm btn-dark';
+        break;
+      case 'dark':
         return 'btn-dark';
+        break;
+      case 'danger-sm':
+        return 'btn-sm btn-danger';
+        break;
+      case 'danger':
+        return 'btn-danger';
+        break;
+      case 'sm':
+        return 'btn-sm';
         break;
     }
     return 'btn-primary'
