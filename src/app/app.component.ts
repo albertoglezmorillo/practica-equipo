@@ -12,7 +12,7 @@ export class AppComponent {
   prueba: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
-
+hola:boolean=true;
 
 
 
@@ -61,6 +61,15 @@ export class AppComponent {
   cambioCodigo(valor:any){
     this.filtros.codigo = valor;
   }
+  cambioAlias(valor:any){
+    this.filtros.alias = valor;
+  }
+  cambioProvincia(valor:any){
+    this.filtros.provincia = valor;
+  }
+  cambioDocumento(valor:any){
+    this.filtros.documento = valor;
+  }
 
   cambioFiltroActivo(valor:any){
     this.filtros.activo = valor;
@@ -70,10 +79,11 @@ export class AppComponent {
 
     this.clienteSeleccionado = item;
    
-    console.log("cliente seleccionado", this.clienteSeleccionado);
+    console.log("cliente seleccionado", typeof this.clienteSeleccionado.activo);
 
   }
 
+  
 
   buscar() {
 

@@ -14,18 +14,21 @@
         [etiqueta]="'Alias:'"
         [botonBorrar]="true"
         [size]="'sm'"
+        (changed)="cambioAlias($event)"
       ></app-input>
       <app-input
         class="contenido-filtro"
         [etiqueta]="'Provincia:'"
         [botonBorrar]="true"
         [size]="'sm'"
+        (changed)="cambioProvincia($event)"
       ></app-input>
       <app-input
         class="contenido-filtro"
         [etiqueta]="'Documento:'"
         [botonBorrar]="true"
         [size]="'sm'"
+        (changed)="cambioDocumento($event)"
       ></app-input>
       <app-switch (changed)="cambioFiltroActivo($event)"></app-switch>
     </div>
@@ -34,8 +37,12 @@
         [estilo]="'warning'"
         [etiqueta]="'Limpiar Filtros'"
       ></app-boton>
-      <app-boton [etiqueta]="'Buscar'"></app-boton>
-      <app-boton [estilo]="'danger'" [etiqueta]="'Borrar'"></app-boton>
+      <app-boton [etiqueta]="'Buscar'" (click)="buscar()"></app-boton>
+      <app-boton
+        [estilo]="'danger'"
+        [etiqueta]="'Borrar'"
+        (click)="eliminar()"
+      ></app-boton>
 
       <app-modal-creacion class="buscar"></app-modal-creacion>
     </div>
@@ -50,6 +57,7 @@
       >
       </app-tarjeta-cliente>
     </div>
+
     <div class="contenedor-dato">
       <div class="datos">
         <div class="titulo-vaciar">
@@ -147,6 +155,8 @@
             [estilo]="'dark-sm'"
             (click)="modificar()"
           ></app-boton>
+          <app-switch [numeroSwitch]="2" [valorInput]="clienteSeleccionado.activo" ></app-switch>
+          
         </div>
       </div>
     </div>
