@@ -18,7 +18,7 @@ export class cliente{
 
     constructor(json:any) {
         this.idcliente=json.idcliente??'';
-        this.activo = json.activo ?? '';
+        this.activo = json.activo ?? false;
         this.numero = json.numero ?? '';
         this.nombre = json.nombre ?? '';
         this.alias = json.alias ?? '';
@@ -26,10 +26,10 @@ export class cliente{
         this.direccion = json.direccion ?? '';
         this.poblacion = json.poblacion ?? '';
         this.provincia = json.provincia ?? '';
-        this.telefono = json.telefono ?? '';
+        this.telefono = json.telefono ?? 0;
         this.comercial = json.comercial ?? '';
         this.documento = json.documento ?? '';
-        this.email = json.email ?? '';
+        this.email = json.email ?? null;
         this.notas = json.notas ?? '';
         this.codigo_postal = json.codigo_postal ?? '';
         this.localidad = json.localidad ?? '';

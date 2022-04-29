@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { cliente } from 'src/app/models/cliente.model';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-tarjeta-cliente',
