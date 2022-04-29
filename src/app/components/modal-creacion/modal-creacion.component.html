@@ -88,17 +88,17 @@
     
             <app-input
               [etiqueta]="'Razon Social:'"
-              (changed)="set_model($event,'razon_social')"
+              (changed)="set_model($event,'razon_social')" 
             ></app-input>
             <app-text-area
               [etiqueta]="'Notas:'"
               (changed)="set_model($event,'notas')"
             ></app-text-area>
+            <app-switch [numeroSwitch]="2" (changed)="set_model($event,'activo')"></app-switch>
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" (click)="crear()">Crear</button>
-        
       </div>
     </div>
   </div>

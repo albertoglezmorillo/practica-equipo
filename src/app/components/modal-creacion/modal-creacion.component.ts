@@ -54,9 +54,14 @@ export class ModalCreacionComponent {
       case "notas":
         this.input_modal.notas = valor;
         break
+      case "activo":
+        this.input_modal.activo = valor;
+        break
     }
   }
   crear(){
+    let ternario = this.input_modal.activo='1'?true:false
+    this.input_modal.activo = ternario;
     this.clienteSrv.createCliente(this.input_modal).subscribe(
       (data) => {}
     )
