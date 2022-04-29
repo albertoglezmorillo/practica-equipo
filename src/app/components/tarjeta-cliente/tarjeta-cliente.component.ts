@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { cliente } from 'src/app/models/cliente.model';
 
 @Component({
@@ -6,11 +6,10 @@ import { cliente } from 'src/app/models/cliente.model';
   templateUrl: './tarjeta-cliente.component.html',
   styleUrls: ['./tarjeta-cliente.component.scss']
 })
-export class TarjetaClienteComponent implements OnInit {
+export class TarjetaClienteComponent {
 
   constructor() { }
   @Input() cliente:cliente = new cliente({})
-  ngOnInit(): void {
-  }
+  mostrar:boolean = true;
 
 }

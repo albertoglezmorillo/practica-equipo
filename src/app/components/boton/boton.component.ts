@@ -41,7 +41,10 @@ export class BotonComponent {
         return 'btn-danger';
         break;
       case 'sm':
-        return 'btn-sm';
+        return 'btn-primary btn-sm';
+        break;
+      case 'close':
+        return 'btn-close';
         break;
     }
     return 'btn-primary'

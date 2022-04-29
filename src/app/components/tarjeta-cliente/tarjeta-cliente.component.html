@@ -1,6 +1,7 @@
-<div class="tarjeta">
+<div class="tarjeta" [ngClass]="{'noMostrar': !mostrar}">
   <div class="seccion-arriba">
     <h3 class="alias text-truncate">{{ cliente.alias }}</h3>
+    <app-boton (enviarAccion)="mostrar = false"  [estilo]="'close'"></app-boton>
   </div>
 
   <div class="seccion-medio">

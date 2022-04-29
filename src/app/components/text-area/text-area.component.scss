@@ -1,9 +1,9 @@
 textarea{
     font-family: "Comic Sans MS";
-    background-color: #ffd255;
+    background-color: var(--amarillo-beat);
     resize: none;
     &:focus{
-        background-color: #ffd255;
+        background-color: var(--amarillo-beat);
     }
 }
 
