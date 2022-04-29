@@ -12,14 +12,14 @@ export class AppComponent {
   prueba: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
-hola:boolean=true;
+  hola: boolean = true;
 
 
 
   status: string = '';
 
 
-  
+
 
   filtros = {
     alias: '',
@@ -45,7 +45,7 @@ hola:boolean=true;
 
 
 
-  ordenarPorId(){
+  ordenarPorId() {
 
     this.clientes.sort(function (a: cliente, b: cliente) {
       if (a.alias > b.alias) {
@@ -58,32 +58,32 @@ hola:boolean=true;
     });
   }
 
-  cambioCodigo(valor:any){
+  cambioCodigo(valor: any) {
     this.filtros.codigo = valor;
   }
-  cambioAlias(valor:any){
+  cambioAlias(valor: any) {
     this.filtros.alias = valor;
   }
-  cambioProvincia(valor:any){
+  cambioProvincia(valor: any) {
     this.filtros.provincia = valor;
   }
-  cambioDocumento(valor:any){
+  cambioDocumento(valor: any) {
     this.filtros.documento = valor;
   }
 
-  cambioFiltroActivo(valor:any){
+  cambioFiltroActivo(valor: any) {
     this.filtros.activo = valor;
   }
 
   mostrarSeleccionado(item: cliente) {
 
-    this.clienteSeleccionado = item;
-   
+   // this.clienteSeleccionado = Object.assign(cliente, item);
+   this.clienteSeleccionado =item;
     console.log("cliente seleccionado", typeof this.clienteSeleccionado.activo);
 
   }
 
-  
+
 
   buscar() {
 
@@ -99,7 +99,7 @@ hola:boolean=true;
 
 
   recargarDatos() {
-    
+
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
         console.log(data);
@@ -126,9 +126,57 @@ hola:boolean=true;
       }
     )
   }
+  setInput(valor: any, tipo: string) {
 
+
+    switch (tipo) {
+      case 'documento':
+        this.clienteSeleccionado.documento = valor
+        break;
+      case 'alias':
+        this.clienteSeleccionado.alias = valor
+        break;
+      case 'nombre':
+        this.clienteSeleccionado.nombre = valor
+        break;
+      case 'notas':
+        this.clienteSeleccionado.notas = valor
+        break;
+      case 'direccion':
+        this.clienteSeleccionado.direccion = valor
+        break;
+      case 'poblacion':
+        this.clienteSeleccionado.poblacion = valor
+        break;
+      case 'provincia':
+        this.clienteSeleccionado.provincia = valor
+        break;
+      case 'codigo_postal':
+        this.clienteSeleccionado.codigo_postal = valor
+        break;
+      case 'telefono':
+        this.clienteSeleccionado.telefono = valor
+        break;
+      case 'comercial':
+        this.clienteSeleccionado.comercial = valor
+        break;
+      case 'email':
+        this.clienteSeleccionado.email = valor
+        break;
+      case 'razon_social':
+        this.clienteSeleccionado.razon_social = valor
+        break;
+      
+      case 'activo':
+        this.clienteSeleccionado.activo = (valor=='1')?true:false
+        break;
+
+
+
+    }
+  }
   modificarPersonales() {
-    
+
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
 
@@ -155,7 +203,7 @@ hola:boolean=true;
 
   }
   modificarContacto() {
-    
+
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
 

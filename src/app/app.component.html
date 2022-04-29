@@ -37,13 +37,22 @@
         (changed)="cambioDocumento($event)"
         #documento
       ></app-input>
-      <app-switch (changed)="cambioFiltroActivo($event)" [valorInput]="filtros.activo"></app-switch>
+      <app-switch
+        (changed)="cambioFiltroActivo($event)"
+        [valorInput]="filtros.activo"
+      ></app-switch>
     </div>
     <div class="contenedor-botones">
       <app-boton
         [estilo]="'warning'"
         [etiqueta]="'Limpiar Filtros'"
-        (click)="filtros.codigo='';filtros.alias='';filtros.provincia='';filtros.documento='';filtros.activo='' "
+        (click)="
+          filtros.codigo = '';
+          filtros.alias = '';
+          filtros.provincia = '';
+          filtros.documento = '';
+          filtros.activo = ''
+        "
       ></app-boton>
       <app-boton [etiqueta]="'Buscar'" (click)="buscar()"></app-boton>
       <app-boton
@@ -70,7 +79,6 @@
       <div class="datos">
         <div class="titulo-vaciar">
           <h4>Datos Personales</h4>
-          
         </div>
 
         <div class="seccion">
@@ -78,24 +86,29 @@
             [etiqueta]="'Numero de cliente'"
             [valorInput]="clienteSeleccionado.numero"
           ></app-input>
+
           <app-input
             [etiqueta]="'Documento:'"
             [valorInput]="clienteSeleccionado.documento"
+            (changed)="setInput($event, 'documento')"
           ></app-input>
         </div>
         <app-input
           [etiqueta]="'Nombre:'"
           [valorInput]="clienteSeleccionado.nombre"
+          (changed)="setInput($event, 'nombre')"
         ></app-input>
 
         <app-input
           [etiqueta]="'Alias'"
           [valorInput]="clienteSeleccionado.alias"
+          (changed)="setInput($event, 'alias')"
         ></app-input>
 
         <app-text-area
           [etiqueta]="'Notas:'"
           [valorInput]="clienteSeleccionado.notas"
+          (changed)="setInput($event, 'notas')"
         ></app-text-area>
         <div class="boton-datos">
           <app-boton
@@ -108,46 +121,52 @@
       <div class="datos">
         <div class="titulo-vaciar">
           <h4>Datos de Contacto</h4>
-
-          
         </div>
 
         <app-input
           [etiqueta]="'Direccion:'"
           [valorInput]="clienteSeleccionado.direccion"
+          (changed)="setInput($event, 'direccion')"
         ></app-input>
         <div class="seccion">
           <app-input
             [etiqueta]="'Poblacion:'"
             [valorInput]="clienteSeleccionado.poblacion"
+            (changed)="setInput($event, 'poblacion')"
           ></app-input>
           <app-input
             [etiqueta]="'Provincia:'"
             [valorInput]="clienteSeleccionado.provincia"
+            (changed)="setInput($event, 'provincia')"
           ></app-input>
           <app-input
             [etiqueta]="'Codigo Postal:'"
             [valorInput]="clienteSeleccionado.codigo_postal"
+            (changed)="setInput($event, 'codigo_postal')"
           ></app-input>
         </div>
         <div class="seccion">
           <app-input
             [etiqueta]="'Telefono:'"
             [valorInput]="clienteSeleccionado.telefono"
+            (changed)="setInput($event, 'telefono')"
           ></app-input>
           <app-input
             [etiqueta]="'Comercial:'"
             [valorInput]="clienteSeleccionado.comercial"
+            (changed)="setInput($event, 'comercial')"
           ></app-input>
         </div>
         <app-input
           [etiqueta]="'Email:'"
           [valorInput]="clienteSeleccionado.email"
+          (changed)="setInput($event, 'email')"
         ></app-input>
 
         <app-input
           [etiqueta]="'Razon Social:'"
           [valorInput]="clienteSeleccionado.razon_social"
+          (changed)="setInput($event, 'razon_social')"
         ></app-input>
         <div class="boton-datos">
           <app-boton
@@ -155,7 +174,11 @@
             [estilo]="'dark-sm'"
             (click)="modificarContacto()"
           ></app-boton>
-          <app-switch [numeroSwitch]="2" [valorInput]="clienteSeleccionado.activo" ></app-switch>
+          <app-switch
+            [numeroSwitch]="2"
+            [valorInput]="clienteSeleccionado.activo"
+            (changed)="setInput($event, 'activo')"
+          ></app-switch>
           
         </div>
       </div>
