@@ -9,7 +9,6 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class TarjetaClienteComponent {
 
-  constructor() { }
   @Input() cliente:cliente = new cliente({})
   mostrar:boolean = true;
 
