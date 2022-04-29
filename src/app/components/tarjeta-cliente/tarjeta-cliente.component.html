@@ -1,15 +1,34 @@
-<div class="tarjeta" [ngClass]="{'noMostrar': !mostrar}" (click)="validarClick()">
-  <div class="seccion-arriba">
-    <h3 class="alias text-truncate">{{ cliente.alias }}</h3>
-    <app-boton (enviarAccion)="mostrar = false"  [estilo]="'close'"></app-boton>
+<div class="tarjeta" [ngClass]="{ noMostrar: !mostrar }">
+  <div class="boton">
+    <h3>{{ cliente.idcliente }}</h3>
+    <app-boton (enviarAccion)="mostrar = false" [estilo]="'close'"></app-boton>
   </div>
 
-  <div class="seccion-medio" *ngIf="cliente.comercial||cliente.poblacion||cliente.telefono">
-    <div class="comercial " ><h5 class="text-truncate">{{ cliente.comercial }}</h5> </div>
-    <div class="poblacion" ><h5>{{ cliente.poblacion }}</h5></div>
-    <div class="telefono" > <h5>{{ (cliente.telefono==0)?'':cliente.telefono }}</h5></div>
+  <div class="seccion-arriba ">
+    <h5 class="alias text-truncate">{{ cliente.alias }}</h5>
   </div>
-  <div class="seccion-abajo" *ngIf="cliente.email">
-    <div class="correo"  *ngIf="cliente.email">{{ cliente.email }}</div>
+
+  <div
+    class="seccion-medio"
+    *ngIf="
+      cliente.comercial ||
+      cliente.poblacion ||
+      cliente.telefono ||
+      cliente.email
+    "
+  >
+    <div class="comercial">
+      <h6>Comercial: {{ cliente.comercial }}</h6>
+    </div>
+    <div class="poblacion">
+      <h6>Poblacion: {{ cliente.poblacion }}</h6>
+    </div>
+    <div class="telefono">
+      <h6>Telefono: {{ cliente.telefono == 0 ? "" : cliente.telefono }}</h6>
+    </div>
+
+    <div class="correo">
+      <h6 class="text-truncate">E-mail: {{ cliente.email }}</h6>
+    </div>
   </div>
 </div>

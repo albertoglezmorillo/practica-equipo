@@ -20,7 +20,7 @@
       .contenido-filtro {
         color: whitesmoke;
       }
-      app-switch{
+      app-switch {
         color: whitesmoke;
       }
     }
@@ -38,15 +38,14 @@
     display: flex;
    justify-content: space-between;
     overflow-y: hidden;
-
+    
     .contenedor-tarjeta {
-      min-width: 500px;
       height: 100%;
       display: flex;
       padding: 0.5rem;
       flex-wrap: wrap;
-      justify-content: left;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       overflow-y: auto;
       overflow-x: hidden;
       &::-webkit-scrollbar {
@@ -84,7 +83,6 @@
       .datos {
         margin: 5px;
         padding: 7px;
-
         border-radius: 5px;
         background-color: var(--blanco-beat);
         h4 {
@@ -117,8 +115,6 @@
           flex-direction: row-reverse;
           gap: 0.5rem;
           padding-top: 5px;
-
-          
         }
       }
     }

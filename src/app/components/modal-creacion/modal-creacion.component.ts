@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { cliente } from 'src/app/models/cliente.model';
 import { ClienteService } from 'src/app/services/cliente.service';
 
@@ -9,11 +9,13 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class ModalCreacionComponent {
 
+  @Output() salida = new EventEmitter();
   constructor(public clienteSrv:ClienteService) { }
   
   input_modal:cliente = new cliente({});
 
   set_model(valor:any,tipo:string){
+
     switch (tipo){
       case "numero":
         this.input_modal.numero = valor;
@@ -55,15 +57,15 @@ export class ModalCreacionComponent {
         this.input_modal.notas = valor;
         break
       case "activo":
-        this.input_modal.activo = valor;
+        this.input_modal.activo = (valor);
         break
     }
+
+    
   }
   crear(){
-    let ternario = this.input_modal.activo='1'?true:false
-    this.input_modal.activo = ternario;
     this.clienteSrv.createCliente(this.input_modal).subscribe(
-      (data) => {}
+      (data) => {this.salida.emit()}
     )
   }
 
