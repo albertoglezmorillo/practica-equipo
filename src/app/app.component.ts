@@ -9,9 +9,18 @@ import { ClienteService } from './services/cliente.service';
 })
 export class AppComponent {
   title = 'practica-equipo';
-  prueba:any = [1,2,3,4,5,6,7,8,9,10];
-  clientes: cliente[]= [];
-  clienteSeleccionado: cliente=new cliente({});
+  prueba: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  clientes: cliente[] = [];
+  clienteSeleccionado: cliente = new cliente({});
+hola:boolean=true;
+
+
+
+  status: string = '';
+
+
+  
+
   filtros = {
     alias: '',
     activo: '',
@@ -20,13 +29,13 @@ export class AppComponent {
     codigo: '',
   };
 
-  constructor(public clienteSvc:ClienteService){
+  constructor(public clienteSvc: ClienteService) {
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
 
         this.clientes = data.data;
         this.ordenarPorId();
-        this.clienteSeleccionado=this.clientes[0];
+        this.clienteSeleccionado = this.clientes[0];
       },
       (error) => {
         alert(error.error.message);
@@ -34,7 +43,10 @@ export class AppComponent {
     );
   }
 
+
+
   ordenarPorId(){
+
     this.clientes.sort(function (a: cliente, b: cliente) {
       if (a.alias > b.alias) {
         return 1;
@@ -49,6 +61,15 @@ export class AppComponent {
   cambioCodigo(valor:any){
     this.filtros.codigo = valor;
   }
+  cambioAlias(valor:any){
+    this.filtros.alias = valor;
+  }
+  cambioProvincia(valor:any){
+    this.filtros.provincia = valor;
+  }
+  cambioDocumento(valor:any){
+    this.filtros.documento = valor;
+  }
 
   cambioFiltroActivo(valor:any){
     this.filtros.activo = valor;
@@ -57,20 +78,29 @@ export class AppComponent {
   mostrarSeleccionado(item: cliente) {
 
     this.clienteSeleccionado = item;
-    // this.reiniciarValores();
-    console.log("cliente seleccionado",this.clienteSeleccionado);
+   
+    console.log("cliente seleccionado", typeof this.clienteSeleccionado.activo);
 
   }
+
   
+
+  buscar() {
+
+    console.log("Num cliente del input", this.filtros.codigo)
+    console.log('valores de filtro', this.filtros)
+
+    this.clienteSvc.getCliente(this.filtros).subscribe(
+      (data) => { console.log(data); this.clientes = data.data; this.ordenarPorId(); },
+      (error) => { alert("Los datos no han podido cargarse"); }
+    )
+
+  }
+
+
   recargarDatos() {
-    let filtros = {
-      alias: '',
-      activo: '',
-      provincia: '',
-      documento: '',
-      codigo: ''
-    }
-    this.clienteSvc.getCliente(filtros).subscribe(
+    
+    this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
         console.log(data);
 
@@ -82,5 +112,46 @@ export class AppComponent {
       (error) => { alert("Los datos no han podido cargarse"); }
 
     )
+  }
+
+  eliminar() {
+    let usuarioAborrar = {
+      id: this.clienteSeleccionado.idcliente
+    }
+    console.log(this.clienteSeleccionado.idcliente)
+    this.clienteSvc.deleteCliente(usuarioAborrar).subscribe(
+      (data) => { this.recargarDatos() },
+      (error) => {
+        alert(error.mensaje);
+      }
+    )
+  }
+
+  modificar() {
+    
+    let datosInput = {
+      idcliente: this.clienteSeleccionado.idcliente,
+
+      alias: this.clienteSeleccionado.alias,
+      nombre: this.clienteSeleccionado.nombre,
+      email: this.clienteSeleccionado.email,
+      direccion: this.clienteSeleccionado.direccion,
+      documento: this.clienteSeleccionado.documento,
+      razon_social: this.clienteSeleccionado.razon_social,
+      provincia: this.clienteSeleccionado.provincia,
+      codigo_postal: this.clienteSeleccionado.codigo_postal,
+      localidad: this.clienteSeleccionado.localidad,
+      telefono: this.clienteSeleccionado.telefono,
+      comercial: this.clienteSeleccionado.comercial,
+      notas: this.clienteSeleccionado.notas,
+      activo: this.clienteSeleccionado.activo
+    }
+
+    console.log('datos de datosInput', datosInput)
+    this.clienteSvc.updateCliente(datosInput).subscribe(
+      (data) => { this.recargarDatos() },
+      (error) => { alert("no ha funcionado") }
+    )
+
   }
 }
