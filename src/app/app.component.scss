@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: 70px 1fr;
   overflow-y: hidden;
+  
 
   .contenedor-cabecera {
     height: 100%;
@@ -48,6 +49,17 @@
       align-items: center;
       overflow-y: auto;
       overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #cccccc;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #858585;
+        border-radius: 5px;
+      }
     }
 
     .contenedor-dato {
@@ -57,6 +69,17 @@
       flex-direction: column;
       gap: 15px;
       overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #cccccc;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #858585;
+        border-radius: 5px;
+      }
 
       .datos {
         margin: 5px;
@@ -104,3 +127,4 @@
 .noMostrar{
   display: none;
 }
+
