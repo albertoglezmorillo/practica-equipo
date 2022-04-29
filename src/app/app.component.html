@@ -175,7 +175,7 @@
             [estilo]="'dark-sm'"
             (click)="modificarContacto()"
           ></app-boton>
-          {{clienteSeleccionado.activo}}
+          {{clienteSeleccionado.codigo_postal}}
           <app-switch [numeroSwitch]="2" [valorInput]="(clienteSeleccionado.activo)?'1':'0'" (changed)="clienteSeleccionado.activo = ($event=='1')" ></app-switch>
         </div>
       </div>

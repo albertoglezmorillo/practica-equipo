@@ -19,7 +19,7 @@ export class AppComponent {
   status: string = '';
 
 
-  
+
 
   filtros = {
     alias: '',
@@ -78,8 +78,8 @@ export class AppComponent {
   mostrarSeleccionado(item: cliente) {
 
     this.clienteSeleccionado = Object.assign(cliente, item);
-  this.bandera=false;
-    
+    this.bandera = false;
+
 
   }
 
@@ -104,7 +104,7 @@ export class AppComponent {
       (data) => {
         console.log(data);
 
-        this.clientes = data.data;
+        this.clientes = data.data.map((valor: any) => new cliente(valor))
 
         this.ordenarPorId();
         this.clienteSeleccionado = this.clientes[0]
@@ -179,17 +179,9 @@ export class AppComponent {
 
       alias: this.clienteSeleccionado.alias,
       nombre: this.clienteSeleccionado.nombre,
-      email: this.clienteSeleccionado.email,
-      direccion: this.clienteSeleccionado.direccion,
       documento: this.clienteSeleccionado.documento,
-      razon_social: this.clienteSeleccionado.razon_social,
-      provincia: this.clienteSeleccionado.provincia,
-      codigo_postal: this.clienteSeleccionado.codigo_postal,
-      localidad: this.clienteSeleccionado.localidad,
-      telefono: this.clienteSeleccionado.telefono,
-      comercial: this.clienteSeleccionado.comercial,
       notas: this.clienteSeleccionado.notas,
-      activo: this.clienteSeleccionado.activo
+
     }
 
     console.log('datos de datosInput', datosInput)
@@ -204,18 +196,17 @@ export class AppComponent {
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
 
-      alias: this.clienteSeleccionado.alias,
-      nombre: this.clienteSeleccionado.nombre,
+      
       email: this.clienteSeleccionado.email,
       direccion: this.clienteSeleccionado.direccion,
-      documento: this.clienteSeleccionado.documento,
+     
       razon_social: this.clienteSeleccionado.razon_social,
       provincia: this.clienteSeleccionado.provincia,
       codigo_postal: this.clienteSeleccionado.codigo_postal,
       localidad: this.clienteSeleccionado.localidad,
       telefono: this.clienteSeleccionado.telefono,
       comercial: this.clienteSeleccionado.comercial,
-      notas: this.clienteSeleccionado.notas,
+      
       activo: this.clienteSeleccionado.activo
     }
 
