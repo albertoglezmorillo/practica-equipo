@@ -127,7 +127,34 @@ hola:boolean=true;
     )
   }
 
-  modificar() {
+  modificarPersonales() {
+    
+    let datosInput = {
+      idcliente: this.clienteSeleccionado.idcliente,
+
+      alias: this.clienteSeleccionado.alias,
+      nombre: this.clienteSeleccionado.nombre,
+      email: this.clienteSeleccionado.email,
+      direccion: this.clienteSeleccionado.direccion,
+      documento: this.clienteSeleccionado.documento,
+      razon_social: this.clienteSeleccionado.razon_social,
+      provincia: this.clienteSeleccionado.provincia,
+      codigo_postal: this.clienteSeleccionado.codigo_postal,
+      localidad: this.clienteSeleccionado.localidad,
+      telefono: this.clienteSeleccionado.telefono,
+      comercial: this.clienteSeleccionado.comercial,
+      notas: this.clienteSeleccionado.notas,
+      activo: this.clienteSeleccionado.activo
+    }
+
+    console.log('datos de datosInput', datosInput)
+    this.clienteSvc.updateCliente(datosInput).subscribe(
+      (data) => { this.recargarDatos() },
+      (error) => { alert("no ha funcionado") }
+    )
+
+  }
+  modificarContacto() {
     
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,

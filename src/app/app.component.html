@@ -8,27 +8,34 @@
         [size]="'sm'"
         [valorInput]="filtros.codigo"
         (changed)="cambioCodigo($event)"
+        #numCliente
       ></app-input>
       <app-input
         class="contenido-filtro"
         [etiqueta]="'Alias:'"
         [botonBorrar]="true"
         [size]="'sm'"
+        [valorInput]="filtros.alias"
         (changed)="cambioAlias($event)"
+        #alias
       ></app-input>
       <app-input
         class="contenido-filtro"
         [etiqueta]="'Provincia:'"
         [botonBorrar]="true"
         [size]="'sm'"
+        [valorInput]="filtros.provincia"
         (changed)="cambioProvincia($event)"
+        #provincia
       ></app-input>
       <app-input
         class="contenido-filtro"
         [etiqueta]="'Documento:'"
         [botonBorrar]="true"
         [size]="'sm'"
+        [valorInput]="filtros.documento"
         (changed)="cambioDocumento($event)"
+        #documento
       ></app-input>
       <app-switch (changed)="cambioFiltroActivo($event)"></app-switch>
     </div>
@@ -36,6 +43,7 @@
       <app-boton
         [estilo]="'warning'"
         [etiqueta]="'Limpiar Filtros'"
+        (click)="filtros.codigo='';filtros.alias='';filtros.provincia='';filtros.documento='' "
       ></app-boton>
       <app-boton [etiqueta]="'Buscar'" (click)="buscar()"></app-boton>
       <app-boton
@@ -62,11 +70,7 @@
       <div class="datos">
         <div class="titulo-vaciar">
           <h4>Datos Personales</h4>
-          <app-boton
-            class="vaciar-Datos"
-            [etiqueta]="'Vaciar'"
-            [estilo]="'warning-sm'"
-          ></app-boton>
+          
         </div>
 
         <div class="seccion">
@@ -97,7 +101,7 @@
           <app-boton
             [etiqueta]="'Modificar'"
             [estilo]="'dark-sm'"
-            (click)="modificar()"
+            (click)="modificarPersonales()"
           ></app-boton>
         </div>
       </div>
@@ -105,11 +109,7 @@
         <div class="titulo-vaciar">
           <h4>Datos de Contacto</h4>
 
-          <app-boton
-            class="vaciar-Datos"
-            [etiqueta]="'Vaciar'"
-            [estilo]="'warning-sm'"
-          ></app-boton>
+          
         </div>
 
         <app-input
@@ -153,7 +153,7 @@
           <app-boton
             [etiqueta]="'Modificar'"
             [estilo]="'dark-sm'"
-            (click)="modificar()"
+            (click)="modificarContacto()"
           ></app-boton>
           <app-switch [numeroSwitch]="2" [valorInput]="clienteSeleccionado.activo" ></app-switch>
           
