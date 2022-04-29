@@ -95,13 +95,14 @@
           ></app-text-area>
           <app-switch
             [numeroSwitch]="2"
-            (changed)="set_model($event, 'activo')"
-            [valorInput]="true"
+            (changed)="input_modal.activo=($event=='1')"
+            [valorInput]="0"
           ></app-switch>
+          <p>{{input_modal.activo}}</p>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" (click)="crear()">
+        <button type="button" class="btn btn-success" (click)="crear()" data-bs-dismiss="modal">
           Crear
         </button>
       </div>

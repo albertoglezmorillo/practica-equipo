@@ -61,7 +61,7 @@
         (click)="eliminar()"
       ></app-boton>
 
-      <app-modal-creacion class="buscar"></app-modal-creacion>
+      <app-modal-creacion class="buscar" (salida)="recargarDatos()"></app-modal-creacion>
     </div>
   </div>
   <div class="contenedor-cuerpo">

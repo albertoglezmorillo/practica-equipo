@@ -99,7 +99,6 @@ export class AppComponent {
 
 
   recargarDatos() {
-
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
         console.log(data);
@@ -110,7 +109,6 @@ export class AppComponent {
         this.clienteSeleccionado = this.clientes[0]
       },
       (error) => { alert("Los datos no han podido cargarse"); }
-
     )
   }
 
