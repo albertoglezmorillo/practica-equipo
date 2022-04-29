@@ -16,15 +16,9 @@ export class cliente {
     public codigo_postal: number;
     public localidad: string;
 
-<<<<<<< HEAD
-    constructor(json:any) {
-        this.idcliente=json.idcliente??'';
-        this.activo = json.activo ?? false;
-=======
     constructor(json: any) {
         this.idcliente = json.idcliente ?? '';
         this.activo = (json.activo == 1) ? true : false;
->>>>>>> 59e88d82e5f43b98ca224bbe2e40b7d3ddae1b17
         this.numero = json.numero ?? '';
         this.nombre = json.nombre ?? '';
         this.alias = json.alias ?? '';

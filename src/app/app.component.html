@@ -174,17 +174,12 @@
             [estilo]="'dark-sm'"
             (click)="modificarContacto()"
           ></app-boton>
-<<<<<<< HEAD
-          <app-switch [numeroSwitch]="2" [valorInput]="clienteSeleccionado.activo" ></app-switch>
-          <div></div>
-=======
           <app-switch
             [numeroSwitch]="2"
             [valorInput]="clienteSeleccionado.activo"
             (changed)="setInput($event, 'activo')"
           ></app-switch>
           
->>>>>>> 59e88d82e5f43b98ca224bbe2e40b7d3ddae1b17
         </div>
       </div>
     </div>

@@ -169,9 +169,6 @@ export class AppComponent {
       case 'activo':
         this.clienteSeleccionado.activo = (valor=='1')?true:false
         break;
-
-
-
     }
   }
   modificarPersonales() {
