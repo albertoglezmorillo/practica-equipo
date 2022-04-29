@@ -105,12 +105,12 @@
           [valorInput]="clienteSeleccionado.alias"
           (changed)="setInput($event, 'alias')"
         ></app-input>
-
-        <app-text-area
-          [etiqueta]="'Notas:'"
-          [valorInput]="clienteSeleccionado.notas"
-          (changed)="setInput($event, 'notas')"
-        ></app-text-area>
+        <app-input
+        [etiqueta]="'Razon Social:'"
+        [valorInput]="clienteSeleccionado.razon_social"
+        (changed)="setInput($event, 'razon_social')"
+      ></app-input>
+        
         <div class="boton-datos">
           <app-boton
             [etiqueta]="'Modificar'"
@@ -163,19 +163,19 @@
           [valorInput]="clienteSeleccionado.email"
           (changed)="setInput($event, 'email')"
         ></app-input>
-
-        <app-input
-          [etiqueta]="'Razon Social:'"
-          [valorInput]="clienteSeleccionado.razon_social"
-          (changed)="setInput($event, 'razon_social')"
-        ></app-input>
+        <app-text-area
+        [etiqueta]="'Notas:'"
+        [valorInput]="clienteSeleccionado.notas"
+        (changed)="setInput($event, 'notas')"
+      ></app-text-area>
+        
         <div class="boton-datos">
           <app-boton
             [etiqueta]="'Modificar'"
             [estilo]="'dark-sm'"
             (click)="modificarContacto()"
           ></app-boton>
-          {{clienteSeleccionado.activo}}
+          
           <app-switch [numeroSwitch]="2" [valorInput]="(clienteSeleccionado.activo)?'1':'0'" (changed)="clienteSeleccionado.activo = ($event=='1')" ></app-switch>
         </div>
       </div>

@@ -13,7 +13,7 @@ export class cliente {
     public documento: string;
     public email: string;
     public notas: string;
-    public codigo_postal: number;
+    public codigo_postal: string;
     public localidad: string;
 
     constructor(json:any) {
@@ -31,7 +31,7 @@ export class cliente {
         this.documento = json.documento ?? '';
         this.email = json.email ?? null;
         this.notas = json.notas ?? '';
-        this.codigo_postal = json.codigo_postal ?? '';
+        this.codigo_postal = json.cp?? '';
         this.localidad = json.localidad ?? '';
     }
 }
