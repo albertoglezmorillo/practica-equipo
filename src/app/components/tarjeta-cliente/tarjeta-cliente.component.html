@@ -1,4 +1,4 @@
-<div class="tarjeta bg-warning" [ngClass]="{ noMostrar: !mostrar }">
+<div class="tarjeta" [ngClass]="{ noMostrar: !mostrar }">
   <div class="boton">
     <h3>{{ cliente.idcliente }}</h3>
     <app-boton (enviarAccion)="mostrar = false" [estilo]="'close'"></app-boton>
