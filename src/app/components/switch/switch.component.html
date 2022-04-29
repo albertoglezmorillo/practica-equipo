@@ -1,0 +1,6 @@
+<label>{{(this.valorInput=='')?this.valores[2]:(this.valorInput=='1')?this.valores[1]:this.valores[0]}}</label>
+<div [ngClass]="{'sm':estilo == 'sm'}">
+  <button class="btn  boton-left" [ngClass]="{'negro': valorInput == '0'}" (click)=" cambioInput('0')"></button>
+  <button class="btn  boton-center"  [ngClass]="{'noMostrar' : numeroSwitch <3,'gris': valorInput == ''}" (click)=" cambioInput('')" ></button>
+  <button class="btn  boton-right"  [ngClass]="{'azul': valorInput == '1'}" (click)=" cambioInput('1')"></button>
+</div>

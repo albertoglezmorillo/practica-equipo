@@ -1,6 +1,6 @@
-<label>{{ etiqueta }}</label>
+<label class="text-trucate">{{ etiqueta }}</label>
 <div class="contenedor-input" [ngClass]="{'input-group': botonBorrar}">
-  <input class="form-control" type="text" [ngClass]="{'form-control-sm': size=='sm' }" [(ngModel)]='valorInput' />
-  <button class="btn btn-outline-danger boton input-group-append" [ngClass]="{'noMostrar': !botonBorrar , 'btn-sm': size=='sm' }" (click)="valorInput = ''">X
+  <input class="form-control" type="text" [ngClass]="{'form-control-sm': size=='sm' }" [(ngModel)]='valorInput' (ngModelChange)="cambioInput()"/>
+  <button class="btn btn-danger boton input-group-append" [ngClass]="{'noMostrar': !botonBorrar , 'btn-sm': size=='sm' }" (click)="borrarInput()">X
   </button>
 </div>

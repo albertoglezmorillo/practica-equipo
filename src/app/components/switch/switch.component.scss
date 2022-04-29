@@ -1,0 +1,36 @@
+
+.btn{
+  width: 30px;
+  border-radius: 0px;
+  box-shadow: none;
+  height: 20px;
+  background-color: var(--gris-beat);
+}
+
+.boton-left{
+  border-radius: 5px 0 0 5px;
+
+}
+.boton-right{
+  border-radius: 0 5px 5px 0;
+}
+
+.noMostrar{
+  display: none;
+}
+
+.azul{
+  background-color: blue;
+}
+
+.gris{
+  background-color: grey;
+}
+
+.negro{
+  background-color: black;
+}
+
+.sm{
+  height: 31px;
+}

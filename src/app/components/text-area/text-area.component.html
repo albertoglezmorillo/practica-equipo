@@ -1,2 +1,2 @@
 <label>{{etiqueta}}</label>
-<textarea class="form-control"  [maxlength]="maximoCaracteres" [(ngModel)]="valorInput"></textarea>
+<textarea class="form-control"  [maxlength]="maximoCaracteres" [(ngModel)]="valorInput" (ngModelChange)="cambioInput()"></textarea>
