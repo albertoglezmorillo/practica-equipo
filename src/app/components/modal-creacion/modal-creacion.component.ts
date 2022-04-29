@@ -57,7 +57,6 @@ export class ModalCreacionComponent {
         this.input_modal.notas = valor;
         break
       case "activo":
-        console.log("true or false: ",this.input_modal.activo);
         this.input_modal.activo = (valor);
         break
     }
