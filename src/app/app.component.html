@@ -37,13 +37,13 @@
         (changed)="cambioDocumento($event)"
         #documento
       ></app-input>
-      <app-switch (changed)="cambioFiltroActivo($event)"></app-switch>
+      <app-switch (changed)="cambioFiltroActivo($event)" [valorInput]="filtros.activo"></app-switch>
     </div>
     <div class="contenedor-botones">
       <app-boton
         [estilo]="'warning'"
         [etiqueta]="'Limpiar Filtros'"
-        (click)="filtros.codigo='';filtros.alias='';filtros.provincia='';filtros.documento='' "
+        (click)="filtros.codigo='';filtros.alias='';filtros.provincia='';filtros.documento='';filtros.activo='' "
       ></app-boton>
       <app-boton [etiqueta]="'Buscar'" (click)="buscar()"></app-boton>
       <app-boton
