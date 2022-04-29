@@ -73,6 +73,7 @@
           <app-input
             [etiqueta]="'Numero de cliente'"
             [valorInput]="clienteSeleccionado.numero"
+            [soloLectura]="true"
           ></app-input>
           <app-input
             [etiqueta]="'Documento:'"
@@ -155,8 +156,8 @@
             [estilo]="'dark-sm'"
             (click)="modificar()"
           ></app-boton>
-          <app-switch [numeroSwitch]="2" [valorInput]="clienteSeleccionado.activo" ></app-switch>
-          
+          {{clienteSeleccionado.activo}}
+          <app-switch [numeroSwitch]="2" [valorInput]="(clienteSeleccionado.activo)?'1':'0'" (changed)="clienteSeleccionado.activo = ($event=='1')" ></app-switch>
         </div>
       </div>
     </div>

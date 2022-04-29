@@ -4,12 +4,12 @@
     <app-boton (enviarAccion)="mostrar = false"  [estilo]="'close'"></app-boton>
   </div>
 
-  <div class="seccion-medio">
-    <h5 class="comercial text-truncate" *ngIf="cliente.comercial">{{ cliente.comercial }} </h5>
-    <h5 class="poblacion" *ngIf="cliente.poblacion">{{ cliente.poblacion }}</h5>
-    <h5 class="telefono" *ngIf="cliente.telefono"> {{ cliente.telefono }}</h5>
+  <div class="seccion-medio" *ngIf="cliente.comercial&&cliente.poblacion&&cliente.telefono">
+    <div class="comercial " ><h5 class="text-truncate">{{ cliente.comercial }}</h5> </div>
+    <div class="poblacion" ><h5>{{ cliente.poblacion }}</h5></div>
+    <div class="telefono" > <h5>{{ (cliente.telefono==0)?'':cliente.telefono }}</h5></div>
   </div>
-  <div class="seccion-abajo">
-    <h5 class="correo"  *ngIf="cliente.email">{{ cliente.email }}</h5>
+  <div class="seccion-abajo" *ngIf="cliente.email">
+    <div class="correo"  *ngIf="cliente.email">{{ cliente.email }}</div>
   </div>
 </div>

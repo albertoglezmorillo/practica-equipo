@@ -8,7 +8,6 @@ import { cliente } from 'src/app/models/cliente.model';
 })
 export class TarjetaClienteComponent {
 
-  constructor() { }
   @Input() cliente:cliente = new cliente({})
   mostrar:boolean = true;
 

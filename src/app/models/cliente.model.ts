@@ -18,7 +18,7 @@ export class cliente{
 
     constructor(json:any) {
         this.idcliente=json.idcliente??'';
-        this.activo = json.activo ?? '';
+        this.activo = (json.activo == '1');
         this.numero = json.numero ?? '';
         this.nombre = json.nombre ?? '';
         this.alias = json.alias ?? '';

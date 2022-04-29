@@ -12,7 +12,9 @@ export class InputComponent  {
   @Input() botonBorrar:boolean = false;
   @Input() maximoCaracteres:number = 100;
   @Input() size:string = '';
+  @Input() soloLectura:boolean = false;
   @Output() changed = new EventEmitter<any>();
+
 
   cambioInput(){
     this.changed.emit(this.valorInput);

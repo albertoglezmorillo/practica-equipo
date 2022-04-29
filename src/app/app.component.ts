@@ -33,7 +33,7 @@ hola:boolean=true;
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
 
-        this.clientes = data.data;
+        this.clientes = data.data.map((valor: any) => new cliente(valor));
         this.ordenarPorId();
         this.clienteSeleccionado = this.clientes[0];
       },
