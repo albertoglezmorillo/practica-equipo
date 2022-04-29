@@ -176,15 +176,22 @@ export class AppComponent {
 
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
-
       alias: this.clienteSeleccionado.alias,
+<<<<<<< HEAD
       nombre: this.clienteSeleccionado.nombre,
       documento: this.clienteSeleccionado.documento,
       notas: this.clienteSeleccionado.notas,
 
+=======
+      nombre: this.clienteSeleccionado.nombre, 
+      documento: this.clienteSeleccionado.documento,
+      razon_social: this.clienteSeleccionado.razon_social,
+      notas: this.clienteSeleccionado.notas,
+     
+>>>>>>> joaquin
     }
 
-    console.log('datos de datosInput', datosInput)
+
     this.clienteSvc.updateCliente(datosInput).subscribe(
       (data) => { this.recargarDatos() },
       (error) => { alert("no ha funcionado") }
@@ -195,22 +202,32 @@ export class AppComponent {
 
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
+<<<<<<< HEAD
 
       
       email: this.clienteSeleccionado.email,
       direccion: this.clienteSeleccionado.direccion,
      
       razon_social: this.clienteSeleccionado.razon_social,
+=======
+      email: this.clienteSeleccionado.email,
+      direccion: this.clienteSeleccionado.direccion,
+      documento: this.clienteSeleccionado.documento, 
+>>>>>>> joaquin
       provincia: this.clienteSeleccionado.provincia,
       codigo_postal: this.clienteSeleccionado.codigo_postal,
       localidad: this.clienteSeleccionado.localidad,
       telefono: this.clienteSeleccionado.telefono,
       comercial: this.clienteSeleccionado.comercial,
+<<<<<<< HEAD
       
+=======
+>>>>>>> joaquin
       activo: this.clienteSeleccionado.activo
     }
 
-    console.log('datos de datosInput', datosInput)
+    console.log('datos de datosInput', datosInput.codigo_postal)
+    console.log(typeof datosInput.codigo_postal)
     this.clienteSvc.updateCliente(datosInput).subscribe(
       (data) => { this.recargarDatos() },
       (error) => { alert("no ha funcionado") }
