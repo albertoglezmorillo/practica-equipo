@@ -32,7 +32,6 @@ hola:boolean=true;
   constructor(public clienteSvc: ClienteService) {
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
-
         this.clientes = data.data;
         this.ordenarPorId();
         this.clienteSeleccionado = this.clientes[0];

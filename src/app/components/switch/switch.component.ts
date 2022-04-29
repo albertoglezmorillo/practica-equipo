@@ -15,7 +15,7 @@ export class SwitchComponent {
   
 
   cambioInput(valor: string) {
-   
+    
     this.valorInput=valor;
     this.changed.emit(valor);
   }

@@ -31,7 +31,7 @@ export class ClienteService{
     return this.http.put<any>(this.url,parametros, {headers: this.cabecera});
   }
   createCliente(parametros: any):Observable<any>{
-    return this.http.post<any>(this.url,parametros, {headers: this.cabecera});
+    return this.http.post<any>(this.url, parametros, {headers: this.cabecera});
   }
 
 }
