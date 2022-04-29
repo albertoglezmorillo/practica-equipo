@@ -33,8 +33,9 @@
   }
   .contenedor-cuerpo {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 450px;
+    background-color: var(--roto-beat);
+    display: flex;
+   justify-content: space-between;
     overflow-y: hidden;
 
     .contenedor-tarjeta {
@@ -44,12 +45,14 @@
       padding: 0.5rem;
       flex-wrap: wrap;
       justify-content: left;
+      align-items: center;
       overflow-y: auto;
       overflow-x: hidden;
     }
 
     .contenedor-dato {
       height: 100%;
+      width: 450px;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -60,7 +63,7 @@
         padding: 7px;
 
         border-radius: 5px;
-        background-color: var(--roto-beat);
+        background-color: var(--blanco-beat);
         h4 {
           text-decoration: underline black;
         }
@@ -97,4 +100,7 @@
       }
     }
   }
+}
+.noMostrar{
+  display: none;
 }

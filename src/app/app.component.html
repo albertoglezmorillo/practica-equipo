@@ -70,12 +70,12 @@
         *ngFor="let i of clientes"
         class="tarjetas"
         [cliente]="i"
-        (click)="mostrarSeleccionado(i)"
+        (tarjetaSelec)="mostrarSeleccionado(i)"
       >
       </app-tarjeta-cliente>
     </div>
-
-    <div class="contenedor-dato">
+    <div [ngClass]="{'noMostrar': bandera}">
+    <div class="contenedor-dato" >
       <div class="datos">
         <div class="titulo-vaciar">
           <h4>Datos Personales</h4>
@@ -180,5 +180,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>

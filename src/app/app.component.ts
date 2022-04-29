@@ -14,12 +14,12 @@ export class AppComponent {
   clienteSeleccionado: cliente = new cliente({});
   hola: boolean = true;
 
-
+  bandera: boolean = true;
 
   status: string = '';
 
 
-
+  
 
   filtros = {
     alias: '',
@@ -77,9 +77,9 @@ export class AppComponent {
 
   mostrarSeleccionado(item: cliente) {
 
-   // this.clienteSeleccionado = Object.assign(cliente, item);
-   this.clienteSeleccionado =item;
-    console.log("cliente seleccionado", typeof this.clienteSeleccionado.activo);
+    this.clienteSeleccionado = Object.assign(cliente, item);
+  this.bandera=false;
+    
 
   }
 
@@ -166,9 +166,9 @@ export class AppComponent {
       case 'razon_social':
         this.clienteSeleccionado.razon_social = valor
         break;
-      
+
       case 'activo':
-        this.clienteSeleccionado.activo = (valor=='1')?true:false
+        this.clienteSeleccionado.activo = (valor == '1') ? true : false
         break;
     }
   }

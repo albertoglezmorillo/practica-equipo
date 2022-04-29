@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { cliente } from 'src/app/models/cliente.model';
 import { ClienteService } from 'src/app/services/cliente.service';
 
@@ -10,6 +10,12 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class TarjetaClienteComponent {
 
   @Input() cliente:cliente = new cliente({})
+  @Output() tarjetaSelec=new EventEmitter()
   mostrar:boolean = true;
+  
 
+  validarClick(){
+  console.log("hola")
+    this.tarjetaSelec.emit();
+  }
 }
