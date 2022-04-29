@@ -2,10 +2,9 @@
   background-color: var(--roto-beat);
   color: var(--negro-beat);
   box-shadow: 0px 0px 20px 0px var(--roto-beat);
-  width: 400px;
-  min-height: 80px;
+  width: 330px;
+  height: 220px;
   display: flex;
-  gap: 15px;
   border-radius: 5px;
   padding: 0.5rem;
   flex-direction: column;
@@ -19,55 +18,50 @@
   h3{
     margin: 0;
   }
-  
+  .boton{
+    display: flex;
+    justify-content: space-between;
+  }
   .seccion-arriba {
     text-transform: uppercase;
-    height: 100%;
+    padding-top: 10px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    align-items: center;
   }
 
   .seccion-medio {
     height: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-between;
-    div{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      width: 33%;
-      h5{
-        margin: 0;
-      }
-    }
-    .comercial{
-      border-right: 1px solid var(--negro-beat);
-      padding-right: 0.5rem;
-    }
-    .poblacion{
-
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-    .telefono{
-      border-left: 1px solid var(--negro-beat);
-      padding-left: 0.5rem;
-    }
-  }
-
-
-  .seccion-abajo {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: left;
     justify-content:center;
-    align-items: flex-end;
+    // div{
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   text-align: center;
+    //   width: 33%;
+    //   h5{
+    //     margin: 0;
+    //   }
+    // }
+    // .comercial{
+    //   border-right: 1px solid var(--negro-beat);
+    //   padding-right: 0.5rem;
+    // }
+    // .poblacion{
+
+    //   padding-left: 0.5rem;
+    //   padding-right: 0.5rem;
+    // }
+    // .telefono{
+    //   border-left: 1px solid var(--negro-beat);
+    //   padding-left: 0.5rem;
+    // }
   }
+
 }
 
 .noMostrar{

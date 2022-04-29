@@ -68,7 +68,6 @@
     <div class="contenedor-tarjeta">
       <app-tarjeta-cliente
         *ngFor="let i of clientes"
-        class="tarjetas"
         [cliente]="i"
         (click)="mostrarSeleccionado(i)"
       >

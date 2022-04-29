@@ -13,7 +13,7 @@ export class AppComponent {
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
   hola: boolean = true;
-
+  mostrar:boolean = true;
 
 
   status: string = '';
@@ -80,6 +80,7 @@ export class AppComponent {
    // this.clienteSeleccionado = Object.assign(cliente, item);
    this.clienteSeleccionado =item;
     console.log("cliente seleccionado", typeof this.clienteSeleccionado.activo);
+    
 
   }
 
