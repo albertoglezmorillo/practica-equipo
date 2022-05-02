@@ -66,7 +66,7 @@
   </div>
   <div class="contenedor-cuerpo">
     <div class="contenedor-tarjeta">
-      <app-tarjeta-cliente
+      <app-tarjeta-cliente class="tarjeta"
         *ngFor="let i of clientes"
         [cliente]="i"
         (tarjetaSelec)="mostrarSeleccionado(i)"
