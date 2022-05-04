@@ -65,7 +65,7 @@
     </div>
   </div>
   <div class="contenedor-cuerpo">
-    <div class="contenedor-tarjeta">
+    <div id="contenedor-tarjeta" [ngStyle]="{'height.px': alto_contenedor_tarjetas}">
       <app-tarjeta-cliente class="tarjeta"
         *ngFor="let i of clientes"
         [cliente]="i"

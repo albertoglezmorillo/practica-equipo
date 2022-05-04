@@ -36,18 +36,18 @@
     height: 100%;
     background-color: var(--roto-beat);
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     overflow-y: hidden;
+    padding: 0.5rem;
     
-    .contenedor-tarjeta {
-      height: 100%;
+    #contenedor-tarjeta {
       display: flex;
-      padding: 0.5rem;
       flex-wrap: wrap;
       justify-content: flex-start;
       align-items: flex-start;
       overflow-y: auto;
       overflow-x: hidden;
+
       &::-webkit-scrollbar {
         width: 10px;
       }
