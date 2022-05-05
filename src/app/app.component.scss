@@ -38,9 +38,9 @@
     display: flex;
     justify-content: space-between;
     overflow-y: hidden;
-    padding: 0.5rem;
     
     #contenedor-tarjeta {
+      padding: 0.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -63,6 +63,8 @@
     }
 
     .contenedor-dato {
+      padding: 0.5rem;
+
       height: 100%;
       width: 450px;
       display: flex;

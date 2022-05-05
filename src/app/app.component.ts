@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
   hola: boolean = true;
-  alto_contenedor_tarjetas:any  = null;
+  alto_contenedor_tarjetas:any  = 0;
 
   bandera: boolean = true;
   mostrar: boolean = true;
@@ -89,6 +89,8 @@ export class AppComponent implements OnInit{
     let ancho = 346;
     let numero_columnas = 0;
     let ancho_div = 0;
+    let alto_contenedor_cuerpo = 0;
+    let padding = 16;
 
     let div_tarjetas = document.getElementById('contenedor-tarjeta');
     let div_cuerpos = document.getElementById('contenedor-cuerpo');
@@ -96,15 +98,16 @@ export class AppComponent implements OnInit{
     //calcula cuanto deberia ser el alto del contenedor de las tarjetas
     if (div_tarjetas !== null && div_cuerpos  !== null) {
       ancho_div = div_tarjetas.offsetWidth;
+      alto_contenedor_cuerpo = div_cuerpos.offsetHeight;
       numero_columnas = Math.floor(ancho_div/ancho);
-      this.alto_contenedor_tarjetas = Math.ceil(this.clientes.length/numero_columnas)*alto;
-
-      if(div_cuerpos.offsetHeight < this.alto_contenedor_tarjetas)
+      this.alto_contenedor_tarjetas = (Math.ceil(this.clientes.length/numero_columnas)*alto)+padding;
+      
+      if(alto_contenedor_cuerpo < this.alto_contenedor_tarjetas)
         this.alto_contenedor_tarjetas = null;
     }
     
-    setTimeout(() => {if (ancho_div == 0) {
-      this.recalcularFilas()
+    setTimeout(() => {if (ancho_div <= padding)  {
+      this.recalcularFilas();
     } }, 100);
   }
 
@@ -228,9 +231,6 @@ export class AppComponent implements OnInit{
       comercial: this.clienteSeleccionado.comercial,
       activo: this.clienteSeleccionado.activo,
     };
-
-    console.log('datos de datosInput', datosInput.codigo_postal);
-    console.log(typeof datosInput.codigo_postal);
     this.clienteSvc.updateCliente(datosInput).subscribe(
       (data) => {
         this.recargarDatos();
