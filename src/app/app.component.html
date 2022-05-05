@@ -55,13 +55,13 @@
         "
       ></app-boton>
       <app-boton [etiqueta]="'Buscar'" (click)="buscar()"></app-boton>
-      <app-boton
-        [estilo]="'danger'"
-        [etiqueta]="'Borrar'"
-        (click)="eliminar()"
-      ></app-boton>
+      <app-modal-confirmacion (emisor)="eliminar()">
+      </app-modal-confirmacion>
 
-      <app-modal-creacion class="buscar" (salida)="recargarDatos()"></app-modal-creacion>
+      <app-modal-creacion
+        class="buscar"
+        (salida)="recargarDatos()"
+      ></app-modal-creacion>
     </div>
   </div>
   <div class="contenedor-cuerpo">
@@ -174,8 +174,12 @@
             [estilo]="'dark-sm'"
             (click)="modificarContacto()"
           ></app-boton>
-          {{clienteSeleccionado.activo}}
-          <app-switch [numeroSwitch]="2" [valorInput]="(clienteSeleccionado.activo)?'1':'0'" (changed)="clienteSeleccionado.activo = ($event=='1')" ></app-switch>
+          {{ clienteSeleccionado.activo }}
+          <app-switch
+            [numeroSwitch]="2"
+            [valorInput]="clienteSeleccionado.activo ? '1' : '0'"
+            (changed)="clienteSeleccionado.activo = $event == '1'"
+          ></app-switch>
         </div>
       </div>
     </div>
