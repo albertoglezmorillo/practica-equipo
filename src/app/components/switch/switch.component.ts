@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./switch.component.scss']
 })
 export class SwitchComponent {
-  @Input() valores: string[] = ['No Activo', 'Activo', ''];
+  @Input() valores: string[] = ['No Activo', 'Activo', 'Estado'];
   @Input() numeroSwitch: number = 3;
   @Input() estilo: string = 'sm';
   @Output() changed = new EventEmitter<any>();
