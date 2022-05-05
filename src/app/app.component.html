@@ -176,81 +176,12 @@
               (click)="modificarContacto()"
             ></app-boton>
 
-        <app-text-area
-          [etiqueta]="'Notas:'"
-          [valorInput]="clienteSeleccionado.notas"
-          (changed)="setInput($event, 'notas')"
-        ></app-text-area>
-        <div class="boton-datos">
-          <app-boton
-            [etiqueta]="'Modificar'"
-            [estilo]="'dark-sm'"
-            (click)="modificarPersonales()"
-          ></app-boton>
-        </div>
-      </div>
-      <div class="datos">
-        <div class="titulo-vaciar">
-          <h4>Datos de Contacto</h4>
-        </div>
-
-        <app-input
-          [etiqueta]="'Direccion:'"
-          [valorInput]="clienteSeleccionado.direccion"
-          (changed)="setInput($event, 'direccion')"
-        ></app-input>
-        <div class="seccion">
-          <app-input
-            [etiqueta]="'Poblacion:'"
-            [valorInput]="clienteSeleccionado.poblacion"
-            (changed)="setInput($event, 'poblacion')"
-          ></app-input>
-          <app-input
-            [etiqueta]="'Provincia:'"
-            [valorInput]="clienteSeleccionado.provincia"
-            (changed)="setInput($event, 'provincia')"
-          ></app-input>
-          <app-input
-            [etiqueta]="'Codigo Postal:'"
-            [valorInput]="clienteSeleccionado.codigo_postal"
-            (changed)="setInput($event, 'codigo_postal')"
-          ></app-input>
-        </div>
-        <div class="seccion">
-          <app-input
-            [etiqueta]="'Telefono:'"
-            [valorInput]="clienteSeleccionado.telefono"
-            (changed)="setInput($event, 'telefono')"
-          ></app-input>
-          <app-input
-            [etiqueta]="'Comercial:'"
-            [valorInput]="clienteSeleccionado.comercial"
-            (changed)="setInput($event, 'comercial')"
-          ></app-input>
-        </div>
-        <app-input
-          [etiqueta]="'Email:'"
-          [valorInput]="clienteSeleccionado.email"
-          (changed)="setInput($event, 'email')"
-        ></app-input>
-
-        <app-input
-          [etiqueta]="'Razon Social:'"
-          [valorInput]="clienteSeleccionado.razon_social"
-          (changed)="setInput($event, 'razon_social')"
-        ></app-input>
-        <div class="boton-datos">
-          <app-boton
-            [etiqueta]="'Modificar'"
-            [estilo]="'dark-sm'"
-            (click)="modificarContacto()"
-          ></app-boton>
-          {{ clienteSeleccionado.activo }}
-          <app-switch
-            [numeroSwitch]="2"
-            [valorInput]="clienteSeleccionado.activo ? '1' : '0'"
-            (changed)="clienteSeleccionado.activo = $event == '1'"
-          ></app-switch>
+            <app-switch
+              [numeroSwitch]="2"
+              [valorInput]="clienteSeleccionado.activo ? '1' : '0'"
+              (changed)="clienteSeleccionado.activo = $event == '1'"
+            ></app-switch>
+          </div>
         </div>
       </div>
     </div>
