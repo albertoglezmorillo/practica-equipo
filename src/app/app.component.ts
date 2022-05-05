@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
   hola: boolean = true;
-  alto_contenedor_tarjetas:number  = 0;
+  alto_contenedor_tarjetas:any  = null;
 
   bandera: boolean = true;
   mostrar: boolean = true;
@@ -90,20 +90,25 @@ export class AppComponent implements OnInit{
     let numero_columnas = 0;
     let ancho_div = 0;
 
-    let div_tareas = document.getElementById('contenedor-tarjeta');
-    if (div_tareas !== null) {
-      ancho_div = div_tareas.offsetWidth;
+    let div_tarjetas = document.getElementById('contenedor-tarjeta');
+    let div_cuerpos = document.getElementById('contenedor-cuerpo');
+
+    //calcula cuanto deberia ser el alto del contenedor de las tarjetas
+    if (div_tarjetas !== null && div_cuerpos  !== null) {
+      ancho_div = div_tarjetas.offsetWidth;
       numero_columnas = Math.floor(ancho_div/ancho);
       this.alto_contenedor_tarjetas = Math.ceil(this.clientes.length/numero_columnas)*alto;
+
+      if(div_cuerpos.offsetHeight < this.alto_contenedor_tarjetas)
+        this.alto_contenedor_tarjetas = null;
     }
+    
     setTimeout(() => {if (ancho_div == 0) {
       this.recalcularFilas()
     } }, 100);
   }
 
   buscar() {
-    console.log('Num cliente del input', this.filtros.codigo);
-    console.log('valores de filtro', this.filtros);
 
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
