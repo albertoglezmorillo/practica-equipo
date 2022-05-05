@@ -12,6 +12,7 @@ import { ClienteService } from './services/cliente.service';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { ModalCreacionComponent } from './components/modal-creacion/modal-creacion.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { ModalDinamicoComponent } from './components/modal-dinamico/modal-dinamico.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { SwitchComponent } from './components/switch/switch.component';
     TextAreaComponent,
     ModalCreacionComponent,
     SwitchComponent,
+    ModalDinamicoComponent,
   ],
   imports: [
     BrowserModule,
