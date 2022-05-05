@@ -87,10 +87,10 @@ export class AppComponent implements OnInit{
   recalcularFilas() {
     let alto = 236;
     let ancho = 346;
+    let padding = 16;
     let numero_columnas = 0;
     let ancho_div = 0;
     let alto_contenedor_cuerpo = 0;
-    let padding = 16;
 
     let div_tarjetas = document.getElementById('contenedor-tarjeta');
     let div_cuerpos = document.getElementById('contenedor-cuerpo');
