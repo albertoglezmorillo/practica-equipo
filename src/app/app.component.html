@@ -60,11 +60,16 @@
         [etiqueta]="'Borrar'"
         (click)="eliminar()"
       ></app-boton>
+      <app-boton
+        [estilo]="'success'"
+        [etiqueta]="'Crear Usuario'"
+        (click)="mostrarModal=true"
+      ></app-boton>
 
-      <app-modal-creacion
+      <!-- <app-modal-creacion
         class="buscar"
         (salida)="recargarDatos()"
-      ></app-modal-creacion>
+      ></app-modal-creacion> -->
     </div>
   </div>
   <div id="contenedor-cuerpo">
@@ -189,4 +194,6 @@
       </div>
     </div>
   </div>
+  <app-modal-dinamico class="crear-cliente" [inputsText]="[['hola',],['adios','hola']]" [mensaje]="'hola'" [titulo]="'hola'" (cerrar)="mostrarModal = false" [ngClass]="{'noMostrar': !mostrarModal}"></app-modal-dinamico>
 </div>
+

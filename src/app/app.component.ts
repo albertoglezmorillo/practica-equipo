@@ -12,9 +12,8 @@ export class AppComponent implements OnInit{
   prueba: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
-  hola: boolean = true;
   alto_contenedor_tarjetas:any  = 0;
-
+  mostrarModal = false;
   bandera: boolean = true;
   mostrar: boolean = true;
 
