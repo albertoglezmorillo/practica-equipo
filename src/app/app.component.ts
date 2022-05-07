@@ -8,16 +8,25 @@ import { ClienteService } from './services/cliente.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
-  title = 'practica-equipo';
-  prueba: any = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   clientes: cliente[] = [];
   clienteSeleccionado: cliente = new cliente({});
+  clienteMarcado: cliente = new cliente({});
+  clienteCrear: cliente = new cliente({});
   alto_contenedor_tarjetas:any  = 0;
-  mostrarModal = false;
-  bandera: boolean = true;
-  mostrar: boolean = true;
+  mostrarModalCrear = false;
+  mostrarModalBorrar = false;
 
   status: string = '';
+  tituloCreacion:string = 'Crear Cliente';
+  subtituloCreacion:Array<Array<string>> = [['Datos Personales','0'],['Datos de Contacto','4']];
+  labelsCreacion:Array<Array<string>> = [['Numero de cliente','Documento:'],
+                                        ['Nombre:'],
+                                        ['Alias:'],
+                                        ['Direccion:'],
+                                        ['Poblacion:','Provincia:','Codigo Postal:'],
+                                        ['Telefono:','Comercial:'],
+                                        ['Email:'],
+                                        ['Razon Social:']];
 
   filtros = {
     alias: '',
@@ -33,6 +42,7 @@ export class AppComponent implements OnInit{
         this.clientes = data.data.map((valor: any) => new cliente(valor));
         this.ordenarPorId();
         this.clienteSeleccionado = this.clientes[0];
+        this.clienteMarcado = this.clientes[0];
       },
       (error) => {
         alert(error.error.message);
@@ -75,7 +85,7 @@ export class AppComponent implements OnInit{
 
   mostrarSeleccionado(item: cliente) {
     this.clienteSeleccionado = Object.assign(cliente, item);
-    this.bandera = false;
+    this.clienteMarcado = item;
   }
 
   @HostListener('window:resize', ['$event'])
@@ -117,6 +127,7 @@ export class AppComponent implements OnInit{
         console.log(data);
         this.clientes = data.data;
         this.ordenarPorId();
+        this.clienteSeleccionado = this.clientes[0];
       },
       (error) => {
         alert('Los datos no han podido cargarse');
@@ -127,12 +138,10 @@ export class AppComponent implements OnInit{
   recargarDatos() {
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
-        console.log(data);
 
         this.clientes = data.data.map((valor: any) => new cliente(valor));
 
         this.ordenarPorId();
-        this.clienteSeleccionado = this.clientes[0];
       },
       (error) => {
         alert('Los datos no han podido cargarse');
@@ -144,17 +153,19 @@ export class AppComponent implements OnInit{
     let usuarioAborrar = {
       id: this.clienteSeleccionado.idcliente,
     };
-    console.log(this.clienteSeleccionado.idcliente);
     this.clienteSvc.deleteCliente(usuarioAborrar).subscribe(
       (data) => {
         this.recargarDatos();
+        this.clienteSeleccionado = this.clientes[0];
       },
       (error) => {
         alert(error.mensaje);
       }
     );
+    this.mostrarModalBorrar = false
   }
   setInput(valor: any, tipo: string) {
+    
     switch (tipo) {
       case 'documento':
         this.clienteSeleccionado.documento = valor;
@@ -166,6 +177,7 @@ export class AppComponent implements OnInit{
         this.clienteSeleccionado.nombre = valor;
         break;
       case 'notas':
+        console.log(valor)
         this.clienteSeleccionado.notas = valor;
         break;
       case 'direccion':
@@ -204,8 +216,7 @@ export class AppComponent implements OnInit{
       alias: this.clienteSeleccionado.alias,
       nombre: this.clienteSeleccionado.nombre,
       documento: this.clienteSeleccionado.documento,
-      razon_social: this.clienteSeleccionado.razon_social,
-      notas: this.clienteSeleccionado.notas,
+      razon_social: this.clienteSeleccionado.razon_social
     };
 
     this.clienteSvc.updateCliente(datosInput).subscribe(
@@ -228,6 +239,7 @@ export class AppComponent implements OnInit{
       localidad: this.clienteSeleccionado.localidad,
       telefono: this.clienteSeleccionado.telefono,
       comercial: this.clienteSeleccionado.comercial,
+      notas: this.clienteSeleccionado.notas,
       activo: this.clienteSeleccionado.activo,
     };
     this.clienteSvc.updateCliente(datosInput).subscribe(
@@ -239,4 +251,39 @@ export class AppComponent implements OnInit{
       }
     );
   }
+  guardarDatosInput(valores:Array<Array<any>>){
+    this.clienteCrear.numero =  valores[0][0] ;
+    this.clienteCrear.documento = valores[0][1];
+    this.clienteCrear.nombre = valores[1][0];
+    this.clienteCrear.alias = valores[2][0];
+    this.clienteCrear.direccion = valores[3][0];
+    this.clienteCrear.poblacion = valores[4][0];
+    this.clienteCrear.provincia = valores[4][1];
+    this.clienteCrear.codigo_postal = valores[4][2];
+    this.clienteCrear.telefono = Number(valores[5][0]);
+    this.clienteCrear.comercial = valores[5][1];
+    this.clienteCrear.email = valores[6][0];
+    this.clienteCrear.razon_social = valores[7][0];
+  }
+
+  guardarDatosNotas(valores:Array<string>){
+    this.clienteCrear.notas = valores[0];
+  }
+  guardarDatosSwitch(valores:Array<boolean>){
+    this.clienteCrear.activo = valores[0];
+  }
+
+  crearCliente(){
+    this.clienteSvc.createCliente(this.clienteCrear).subscribe(
+      (data) => {
+        this.recargarDatos();
+        this.mostrarModalCrear = false;
+      },
+      (error) =>{
+        alert(error.error.message)
+      }
+    )
+  }
+
+  
 }
