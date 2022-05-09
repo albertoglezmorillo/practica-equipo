@@ -1,7 +1,7 @@
 export class cliente {
     public idcliente: number;
     public activo: boolean;
-    public numero: number;
+    public numero: string;
     public nombre: string;
     public alias: string;
     public razon_social: string;

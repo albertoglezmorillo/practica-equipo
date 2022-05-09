@@ -1,0 +1,22 @@
+<div class="contenedor-principal">
+  <div class="contenedor-input">
+      <div class="titulo">
+          <h3>{{titulo}}</h3>
+          <app-boton [estilo]="'close'" (enviarAccion)="clickedCerrar()"></app-boton>
+        </div>
+      <div class="cuerpo">
+          <div class="seccion" *ngFor="let x of inputsText; let i = index" [ngClass]="{'noMostrar': inputsText[0].length == 0}">
+            <h4>{{ tituloMostar(i)}}</h4>
+            <div class="contenedor-inputs">
+              <app-input *ngFor="let y of inputsText[i]; let j = index" [etiqueta]="inputsText[i][j]" (changed)="valorInputsText[i][j] = $event;" [ngClass]="{'noMostrar': inputsText[i][j]==null}" ></app-input>
+            </div>
+            <app-text-area *ngIf="notasMostrar(i)" [etiqueta]="notasString(i)" (changed)="cambiarNotas(i,$event)"></app-text-area>
+            <app-switch *ngIf="switchMostrar(i)" [valorInput]="'0'" [numeroSwitch]="2" (changed)="cambiarSwitch(i,$event)"></app-switch>
+          </div>
+          <h5>{{mensaje}}</h5>
+      </div>
+      <div class="botonera">
+          <app-boton [etiqueta]="palabraBoton" (enviarAccion)="botonEnviarDatos()"></app-boton>
+      </div>
+  </div>
+</div>

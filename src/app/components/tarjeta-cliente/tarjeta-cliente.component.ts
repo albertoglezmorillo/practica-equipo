@@ -10,12 +10,12 @@ import { ClienteService } from 'src/app/services/cliente.service';
 export class TarjetaClienteComponent {
 
   @Input() cliente:cliente = new cliente({})
+  @Input() clienteSeleccionado:cliente = new cliente({})
   @Output() tarjetaSelec=new EventEmitter()
   mostrar:boolean = true;
   
 
   validarClick(){
-  console.log("hola")
     this.tarjetaSelec.emit();
   }
 }
