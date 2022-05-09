@@ -30,20 +30,24 @@
           </div>
           <div class="seccion">
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Numero de cliente'"
               (changed)="set_model($event, 'numero')"
             ></app-input>
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Documento:'"
               (changed)="set_model($event, 'documento')"
             ></app-input>
           </div>
           <app-input
+            [size]="'sm'"
             [etiqueta]="'Nombre:'"
             (changed)="set_model($event, 'nombre')"
           ></app-input>
 
           <app-input
+            [size]="'sm'"
             [etiqueta]="'Alias'"
             (changed)="set_model($event, 'alias')"
           ></app-input>
@@ -53,39 +57,47 @@
             <h4>Datos de Contacto</h4>
           </div>
           <app-input
+            [size]="'sm'"
             [etiqueta]="'Direccion:'"
             (changed)="set_model($event, 'direccion')"
           ></app-input>
           <div class="seccion">
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Poblacion:'"
               (changed)="set_model($event, 'poblacion')"
             ></app-input>
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Provincia:'"
               (changed)="set_model($event, 'provincia')"
             ></app-input>
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Codigo Postal:'"
               (changed)="set_model($event, 'codigo_postal')"
             ></app-input>
           </div>
           <div class="seccion">
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Telefono:'"
               (changed)="set_model($event, 'telefono')"
             ></app-input>
             <app-input
+              [size]="'sm'"
               [etiqueta]="'Comercial:'"
               (changed)="set_model($event, 'comercial')"
             ></app-input>
           </div>
           <app-input
+            [size]="'sm'"
             [etiqueta]="'Email:'"
             (changed)="set_model($event, 'email')"
           ></app-input>
 
           <app-input
+            [size]="'sm'"
             [etiqueta]="'Razon Social:'"
             (changed)="set_model($event, 'razon_social')"
           ></app-input>
@@ -95,14 +107,18 @@
           ></app-text-area>
           <app-switch
             [numeroSwitch]="2"
-            (changed)="input_modal.activo=($event=='1')"
+            (changed)="input_modal.activo = $event == '1'"
             [valorInput]="0"
           ></app-switch>
-          <p>{{input_modal.activo}}</p>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" (click)="crear()" data-bs-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="crear()"
+          data-bs-dismiss="modal"
+        >
           Crear
         </button>
       </div>
