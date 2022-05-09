@@ -183,6 +183,8 @@ export class AppComponent implements OnInit{
       localidad: this.clienteSeleccionado.localidad,
       telefono: this.clienteSeleccionado.telefono,
       comercial: this.clienteSeleccionado.comercial,
+      poblacion:this.clienteSeleccionado.poblacion,
+      notas: this.clienteSeleccionado.notas,
       activo: this.clienteSeleccionado.activo,
     };
 
