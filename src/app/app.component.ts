@@ -124,8 +124,8 @@ export class AppComponent implements OnInit{
 
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
-        console.log(data);
-        this.clientes = data.data;
+       
+        this.clientes = data.data.map((valor: any) => new cliente(valor));
         this.ordenarPorId();
         this.clienteSeleccionado = this.clientes[0];
       },
@@ -138,6 +138,7 @@ export class AppComponent implements OnInit{
   recargarDatos() {
     this.clienteSvc.getCliente(this.filtros).subscribe(
       (data) => {
+        
 
         this.clientes = data.data.map((valor: any) => new cliente(valor));
 
@@ -153,6 +154,7 @@ export class AppComponent implements OnInit{
     let usuarioAborrar = {
       id: this.clienteSeleccionado.idcliente,
     };
+    
     this.clienteSvc.deleteCliente(usuarioAborrar).subscribe(
       (data) => {
         this.recargarDatos();
@@ -164,52 +166,7 @@ export class AppComponent implements OnInit{
     );
     this.mostrarModalBorrar = false
   }
-  setInput(valor: any, tipo: string) {
-    
-    switch (tipo) {
-      case 'documento':
-        this.clienteSeleccionado.documento = valor;
-        break;
-      case 'alias':
-        this.clienteSeleccionado.alias = valor;
-        break;
-      case 'nombre':
-        this.clienteSeleccionado.nombre = valor;
-        break;
-      case 'notas':
-        console.log(valor)
-        this.clienteSeleccionado.notas = valor;
-        break;
-      case 'direccion':
-        this.clienteSeleccionado.direccion = valor;
-        break;
-      case 'poblacion':
-        this.clienteSeleccionado.poblacion = valor;
-        break;
-      case 'provincia':
-        this.clienteSeleccionado.provincia = valor;
-        break;
-      case 'codigo_postal':
-        this.clienteSeleccionado.codigo_postal = valor;
-        break;
-      case 'telefono':
-        this.clienteSeleccionado.telefono = valor;
-        break;
-      case 'comercial':
-        this.clienteSeleccionado.comercial = valor;
-        break;
-      case 'email':
-        this.clienteSeleccionado.email = valor;
-        break;
-      case 'razon_social':
-        this.clienteSeleccionado.razon_social = valor;
-        break;
-
-      case 'activo':
-        this.clienteSeleccionado.activo = valor == '1' ? true : false;
-        break;
-    }
-  }
+ 
   modificarPersonales() {
     let datosInput = {
       idcliente: this.clienteSeleccionado.idcliente,
@@ -242,6 +199,8 @@ export class AppComponent implements OnInit{
       notas: this.clienteSeleccionado.notas,
       activo: this.clienteSeleccionado.activo,
     };
+
+    
     this.clienteSvc.updateCliente(datosInput).subscribe(
       (data) => {
         this.recargarDatos();
