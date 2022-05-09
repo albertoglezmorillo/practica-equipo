@@ -1,21 +1,11 @@
 <div class="tarjeta" [ngClass]="{ 'seleccionado': cliente == clienteSeleccionado }" (click)="validarClick()">
-  <div class="boton">
+  <div class="seccion-arriba">
     <h3>{{ cliente.numero }}</h3>
   </div>
-
-  <div class="seccion-arriba ">
+  <div class="seccion-medio ">
     <h5 class="alias text-truncate">{{ cliente.alias }}</h5>
   </div>
-
-  <div
-    class="seccion-medio"
-    *ngIf="
-      cliente.comercial ||
-      cliente.poblacion ||
-      cliente.telefono ||
-      cliente.email
-    "
-  >
+  <div class="seccion-abajo">
     <div class="comercial">
       <h6>Comercial: {{ cliente.comercial }}</h6>
     </div>
