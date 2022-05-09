@@ -9,11 +9,11 @@ export class ModalDinamicoComponent implements OnInit{
   @Input() mensaje:any;
   @Input() titulo:string = '';
   @Input() colorBoton:string = '';
+  @Input() palabraBoton:string = 'Confirmar';
   @Input() subTitulo:Array<Array<string>> = [[],[]];
   @Input() inputsText: Array<Array<string>> =  [[],[]];
   @Input() notas: Array<Array<string|number>> =  [[],[]];
   @Input() switch: Array<number> =  [];
-  @Input() palabraBoton:string = 'Confirmar';
   @Input() mostrarCuerpo: boolean = true;
   @Input() mensajeError: boolean = true;
   valorNotas:Array<string> =  [];

@@ -98,7 +98,8 @@
     [titulo]="'Eliminar Cliente'"
     [colorBoton]="'danger'"
     (cerrar)="mostrarModalBorrar = false" 
-    (confirmar)="eliminar()" 
+    (confirmar)="eliminar()"
+    [palabraBoton]="'Eliminar'"
     [ngClass]="{ noMostrar: !mostrarModalBorrar }">
   </app-modal-dinamico>
   <app-modal-dinamico class="crear-cliente" 
