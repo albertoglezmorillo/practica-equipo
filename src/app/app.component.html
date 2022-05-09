@@ -94,7 +94,7 @@
     </div>
   </div>
   <app-modal-dinamico class="crear-cliente"
-    [mensaje]="'Esta seguro de borrar el cliente'"
+    [mensaje]="'¿Esta seguro de eliminar el cliente ``'+clienteSeleccionado.alias+'´´?'"
     [titulo]="'Eliminar Cliente'"
     [colorBoton]="'danger'"
     (cerrar)="mostrarModalBorrar = false"
