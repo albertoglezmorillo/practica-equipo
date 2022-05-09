@@ -2,8 +2,7 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 70px 1fr;
-  overflow-y: hidden;
-  
+  // overflow-y: hidden;
 
   .contenedor-cabecera {
     height: 100%;
@@ -38,9 +37,9 @@
     display: flex;
     justify-content: space-between;
     overflow-y: hidden;
-    padding: 0.5rem;
-    
+
     #contenedor-tarjeta {
+      padding: 0.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -63,8 +62,11 @@
     }
 
     .contenedor-dato {
+      padding: 0.5rem;
+
       height: 100%;
       width: 450px;
+      min-width: 450px;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -122,7 +124,16 @@
     }
   }
 }
-.noMostrar{
+.noMostrar {
   display: none;
 }
 
+.crear-cliente{
+  height: 100vh;
+  width: 100vw;
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  z-index: 2;
+}

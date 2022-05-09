@@ -1,7 +1,6 @@
-<div class="tarjeta" [ngClass]="{ noMostrar: !mostrar }" (click)="validarClick()">
+<div class="tarjeta" [ngClass]="{ 'seleccionado': cliente == clienteSeleccionado }" (click)="validarClick()">
   <div class="boton">
     <h3>{{ cliente.idcliente }}</h3>
-    <app-boton (enviarAccion)="mostrar = false" [estilo]="'close'"></app-boton>
   </div>
 
   <div class="seccion-arriba ">

@@ -10,9 +10,8 @@ import { InputComponent } from './components/input/input.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ClienteService } from './services/cliente.service';
 import { TextAreaComponent } from './components/text-area/text-area.component';
-import { ModalCreacionComponent } from './components/modal-creacion/modal-creacion.component';
 import { SwitchComponent } from './components/switch/switch.component';
-import { ModalConfirmacionComponent } from './components/modal-confirmacion/modal-confirmacion.component';
+import { ModalDinamicoComponent } from './components/modal-dinamico/modal-dinamico.component';
 
 
 @NgModule({
@@ -22,9 +21,8 @@ import { ModalConfirmacionComponent } from './components/modal-confirmacion/moda
     BotonComponent,
     InputComponent,
     TextAreaComponent,
-    ModalCreacionComponent,
     SwitchComponent,
-    ModalConfirmacionComponent
+    ModalDinamicoComponent,
   ],
   imports: [
     BrowserModule,

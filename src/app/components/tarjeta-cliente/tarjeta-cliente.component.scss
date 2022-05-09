@@ -10,12 +10,6 @@
   flex-direction: column;
   margin: 0.5rem;
   cursor: pointer;
-  &:hover{
-    box-shadow: 0px 0px 20px 0px var(--amarillo-beat);
-  }
-  &:active{
-    background-color: var(--roto-beat);
-  }
   
   h3{
     margin: 0;
@@ -45,4 +39,9 @@
 
 .noMostrar{
   display: none;
+}
+
+.seleccionado{
+  background-color: var(--negro-beat);
+  color:  var(--blanco-beat);
 }
