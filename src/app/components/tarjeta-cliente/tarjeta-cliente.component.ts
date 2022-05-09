@@ -15,7 +15,6 @@ export class TarjetaClienteComponent {
   
 
   validarClick(){
-  console.log("hola")
     this.tarjetaSelec.emit();
   }
 }
