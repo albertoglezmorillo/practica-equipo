@@ -1,7 +1,6 @@
 .tarjeta {
   background-color: var(--blanco-beat);
   color: var(--negro-beat);
-  box-shadow: 0px 0px 20px 0px var(--roto-beat);
   width: 330px;
   height: 220px;
   display: flex;
@@ -10,7 +9,9 @@
   flex-direction: column;
   margin: 0.5rem;
   cursor: pointer;
-  
+  &:hover{
+    color: var(--azul-beat);
+  }
   h3{
     margin: 0;
   }
@@ -42,6 +43,6 @@
 }
 
 .seleccionado{
-  background-color: var(--negro-beat);
-  color:  var(--blanco-beat);
+  
+  box-shadow: 0px 0px 10px 0px var(--negro-beat);
 }
