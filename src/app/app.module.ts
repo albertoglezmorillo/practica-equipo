@@ -12,6 +12,7 @@ import { ClienteService } from './services/cliente.service';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { ModalDinamicoComponent } from './components/modal-dinamico/modal-dinamico.component';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ModalDinamicoComponent } from './components/modal-dinamico/modal-dinami
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PopoverModule.forRoot()
     
   ],
   providers: [ClienteService],

@@ -12,16 +12,20 @@
       <app-switch (changed)="cambioFiltroActivo($event)" [etiqueta]="'Activo:'" [valorInput]="filtros.activo"></app-switch>
     </div>
     <div class="contenedor-botones">
-      <app-boton [estilo]="'warning'" [etiqueta]="'Limpiar Filtros'" (click)="
+      <app-boton [estilo]="'warning'" [etiqueta]="'🧹​'" (click)="
           filtros.codigo = '';
           filtros.alias = '';
           filtros.provincia = '';
           filtros.documento = '';
           filtros.activo = ''
-        "></app-boton>
-      <app-boton [etiqueta]="'Buscar'" (click)="buscar()"></app-boton>
-      <app-boton [estilo]="'danger'" [etiqueta]="'Borrar'" (click)="mostrarModalBorrar = true"></app-boton>
-      <app-boton [estilo]="'success'" [etiqueta]="'Crear Usuario'" (click)="mostrarModalCrear = true"></app-boton>
+        " popover="Limpiar Filtro" placement="left"
+        triggers="mouseenter:mouseleave"></app-boton>
+      <app-boton [etiqueta]="'🔍'" (click)="buscar()" popover="Buscar" placement="left"
+      triggers="mouseenter:mouseleave"></app-boton>
+      <app-boton [estilo]="'danger'" [etiqueta]="'🗑️​'" (click)="mostrarModalBorrar = true" popover="Borrar" placement="left"
+      triggers="mouseenter:mouseleave"></app-boton>
+      <app-boton [estilo]="'success'" [etiqueta]="'+🙎‍♂️'" (click)="mostrarModalCrear = true" popover="Crear Usuario" placement="left"
+      triggers="mouseenter:mouseleave"></app-boton>
     </div>
   </div>
   <div id="contenedor-cuerpo">
