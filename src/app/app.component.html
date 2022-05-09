@@ -9,7 +9,7 @@
         [valorInput]="filtros.provincia" (changed)="cambioProvincia($event)" #provincia></app-input>
       <app-input class="contenido-filtro" [etiqueta]="'Documento:'" [botonBorrar]="true" [size]="'sm'"
         [valorInput]="filtros.documento" (changed)="cambioDocumento($event)" #documento></app-input>
-      <app-switch (changed)="cambioFiltroActivo($event)" [valorInput]="filtros.activo"></app-switch>
+      <app-switch (changed)="cambioFiltroActivo($event)" [etiqueta]="'Activo:'" [valorInput]="filtros.activo"></app-switch>
     </div>
     <div class="contenedor-botones">
       <app-boton [estilo]="'warning'" [etiqueta]="'Limpiar Filtros'" (click)="
@@ -75,8 +75,8 @@
           <app-input [etiqueta]="'Comercial:'" [valorInput]="clienteSeleccionado.comercial"
             (changed)="clienteSeleccionado.comercial= $event"></app-input>
         </div>
-        <app-input 
-          [etiqueta]="'Email:'" 
+        <app-input
+          [etiqueta]="'Email:'"
           [valorInput]="clienteSeleccionado.email"
           (changed)="clienteSeleccionado.email= $event">
         </app-input>
@@ -93,20 +93,20 @@
       </div>
     </div>
   </div>
-  <app-modal-dinamico class="crear-cliente" 
-    [mensaje]="'Esta seguro de borrar el cliente'" 
+  <app-modal-dinamico class="crear-cliente"
+    [mensaje]="'Esta seguro de borrar el cliente'"
     [titulo]="'Eliminar Cliente'"
     [colorBoton]="'danger'"
-    (cerrar)="mostrarModalBorrar = false" 
+    (cerrar)="mostrarModalBorrar = false"
     (confirmar)="eliminar()"
     [palabraBoton]="'Eliminar'"
     [ngClass]="{ noMostrar: !mostrarModalBorrar }">
   </app-modal-dinamico>
-  <app-modal-dinamico class="crear-cliente" 
-    [inputsText]="labelsCreacion" 
+  <app-modal-dinamico class="crear-cliente"
+    [inputsText]="labelsCreacion"
     [subTitulo]="subtituloCreacion"
-    [notas]="[['Notas:', 7], []]" 
-    [switch]="[7]" 
+    [notas]="[['Notas:', 7], []]"
+    [switch]="[7]"
     [titulo]="tituloCreacion"
     [mensajeError]="mensajeErrorCrear"
     (cerrar)="mostrarModalCrear = false"

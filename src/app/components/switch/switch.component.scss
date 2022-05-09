@@ -1,12 +1,21 @@
 div{
   width: 100px;
+  display: flex;
 }
 .btn{
   width: 30px;
   border-radius: 0px;
   box-shadow: none;
-  height: 20px;
+  height: 30px;
   background-color: var(--gris-beat);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  color: whitesmoke;
+  font-weight: bolder;
 }
 
 .boton-left{
@@ -22,7 +31,7 @@ div{
 }
 
 .azul{
-  background-color: blue;
+  background-color: forestgreen;
 }
 
 .gris{
@@ -30,7 +39,7 @@ div{
 }
 
 .negro{
-  background-color: black;
+  background-color: indianred;
 }
 
 .sm{
