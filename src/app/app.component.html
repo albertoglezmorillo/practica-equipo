@@ -91,24 +91,24 @@
             <app-input
               [etiqueta]="'Documento:'"
               [valorInput]="clienteSeleccionado.documento"
-              (changed)="setInput($event, 'documento')"
+              (changed)="clienteSeleccionado.documento=$event"
             ></app-input>
           </div>
           <app-input
             [etiqueta]="'Nombre:'"
             [valorInput]="clienteSeleccionado.nombre"
-            (changed)="setInput($event, 'nombre')"
+            (changed)="clienteSeleccionado.nombre=$event"
           ></app-input>
 
           <app-input
             [etiqueta]="'Alias'"
             [valorInput]="clienteSeleccionado.alias"
-            (changed)="setInput($event, 'alias')"
+            (changed)="clienteSeleccionado.alias=$event"
           ></app-input>
           <app-input
             [etiqueta]="'Razon Social:'"
             [valorInput]="clienteSeleccionado.razon_social"
-            (changed)="setInput($event, 'razon_social')"
+            (changed)="clienteSeleccionado.razon_social=$event"
           ></app-input>
 
           <div class="boton-datos">
@@ -127,46 +127,46 @@
           <app-input
             [etiqueta]="'Direccion:'"
             [valorInput]="clienteSeleccionado.direccion"
-            (changed)="setInput($event, 'direccion')"
+            (changed)="clienteSeleccionado.direccion=$event"
           ></app-input>
           <div class="seccion">
             <app-input
               [etiqueta]="'Poblacion:'"
               [valorInput]="clienteSeleccionado.poblacion"
-              (changed)="setInput($event, 'poblacion')"
+              (changed)="clienteSeleccionado.poblacion=$event"
             ></app-input>
             <app-input
               [etiqueta]="'Provincia:'"
               [valorInput]="clienteSeleccionado.provincia"
-              (changed)="setInput($event, 'provincia')"
+              (changed)="clienteSeleccionado.provincia=$event"
             ></app-input>
             <app-input
               [etiqueta]="'Codigo Postal:'"
               [valorInput]="clienteSeleccionado.codigo_postal"
-              (changed)="setInput($event, 'codigo_postal')"
+              (changed)="clienteSeleccionado.codigo_postal=$event"
             ></app-input>
           </div>
           <div class="seccion">
             <app-input
               [etiqueta]="'Telefono:'"
               [valorInput]="clienteSeleccionado.telefono"
-              (changed)="setInput($event, 'telefono')"
+              (changed)="clienteSeleccionado.telefono=$event"
             ></app-input>
             <app-input
               [etiqueta]="'Comercial:'"
               [valorInput]="clienteSeleccionado.comercial"
-              (changed)="setInput($event, 'comercial')"
+              (changed)="clienteSeleccionado.comercial= $event"
             ></app-input>
           </div>
           <app-input
             [etiqueta]="'Email:'"
             [valorInput]="clienteSeleccionado.email"
-            (changed)="setInput($event, 'email')"
+            (changed)="clienteSeleccionado.email= $event"
           ></app-input>
           <app-text-area
             [etiqueta]="'Notas:'"
             [valorInput]="clienteSeleccionado.notas"
-            (changed)="setInput($event, 'notas')"
+            (changed)="clienteSeleccionado.notas= $event"
           ></app-text-area>
 
           <div class="boton-datos">
