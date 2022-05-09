@@ -22,6 +22,7 @@ export class ClienteService{
   }
 
   getCliente(parametros: any):Observable<any>{
+    
     return this.http.get<any>(this.url,{headers: this.cabecera, params: parametros});
   }
   deleteCliente(parametros: any) :Observable<any>{
