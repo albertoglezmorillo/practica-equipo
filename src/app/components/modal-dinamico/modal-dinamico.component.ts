@@ -8,12 +8,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ModalDinamicoComponent implements OnInit{
   @Input() mensaje:any;
   @Input() titulo:string = '';
+  @Input() colorBoton:string = '';
   @Input() subTitulo:Array<Array<string>> = [[],[]];
   @Input() inputsText: Array<Array<string>> =  [[],[]];
   @Input() notas: Array<Array<string|number>> =  [[],[]];
   @Input() switch: Array<number> =  [];
   @Input() palabraBoton:string = 'Confirmar';
   @Input() mostrarCuerpo: boolean = true;
+  @Input() mensajeError: boolean = true;
   valorNotas:Array<string> =  [];
   valorSwitch:Array<boolean> =  [];
   valorInputsText:Array<Array<string>> =  [[],[]];
@@ -24,9 +26,7 @@ export class ModalDinamicoComponent implements OnInit{
   @Output() cerrar = new EventEmitter<any>();
   @Output() confirmar = new EventEmitter<any>();
 
-  constructor(){
 
-  }
   ngOnInit(): void {
     for (let i = 0; i < this.inputsText.length ; i++) {
       let arrayString:Array<string> =[];
@@ -41,6 +41,24 @@ export class ModalDinamicoComponent implements OnInit{
     for (let i = 0; i < this.switch.length ; i++) {
       this.valorSwitch.push(false);
     }
+  }
+
+  reiniciarDatos(){
+    console.log('hola')
+    console.log(this.valorInputsText[0][1])
+    for (let i = 0; i < this.valorInputsText.length ; i++) {
+      for (let j = 0; j < this.valorInputsText[i].length; j++) {
+        this.valorInputsText[i][j]=' ';
+      }
+    }
+    for (let i = 0; i < this.valorNotas.length ; i++) {
+      this.valorNotas[i]=''
+    }
+    for (let i = 0; i < this.valorSwitch.length ; i++) {
+      this.valorSwitch[i]=false;
+    }
+    console.log(this.valorInputsText[0][1])
+
   }
 
   tituloMostar(numero:number):string{
@@ -78,6 +96,11 @@ export class ModalDinamicoComponent implements OnInit{
     this.enviarDatosNotas.emit(this.valorNotas);
     this.enviarDatosSwitch.emit(this.valorSwitch);
     this.confirmar.emit();
+    setTimeout(() => {
+      if(!this.mensajeError){
+        this.reiniciarDatos();
+      }
+     }, 1000);
   }
   
   clickedCerrar(){

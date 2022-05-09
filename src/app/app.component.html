@@ -93,11 +93,22 @@
       </div>
     </div>
   </div>
-  <app-modal-dinamico class="crear-cliente" [mensaje]="'Esta seguro de borrar el cliente'" [titulo]="'Eliminar Cliente'"
-    (cerrar)="mostrarModalBorrar = false" (confirmar)="eliminar()" [ngClass]="{ noMostrar: !mostrarModalBorrar }">
+  <app-modal-dinamico class="crear-cliente" 
+    [mensaje]="'Esta seguro de borrar el cliente'" 
+    [titulo]="'Eliminar Cliente'"
+    [colorBoton]="'danger'"
+    (cerrar)="mostrarModalBorrar = false" 
+    (confirmar)="eliminar()" 
+    [ngClass]="{ noMostrar: !mostrarModalBorrar }">
   </app-modal-dinamico>
-  <app-modal-dinamico class="crear-cliente" [inputsText]="labelsCreacion" [subTitulo]="subtituloCreacion"
-    [notas]="[['Notas:', 7], []]" [switch]="[7]" [titulo]="tituloCreacion" (cerrar)="mostrarModalCrear = false"
+  <app-modal-dinamico class="crear-cliente" 
+    [inputsText]="labelsCreacion" 
+    [subTitulo]="subtituloCreacion"
+    [notas]="[['Notas:', 7], []]" 
+    [switch]="[7]" 
+    [titulo]="tituloCreacion"
+    [mensajeError]="mensajeErrorCrear"
+    (cerrar)="mostrarModalCrear = false"
     (enviarDatosInputText)="guardarDatosInput($event)" (enviarDatosNotas)="guardarDatosNotas($event)"
     (enviarDatosSwitch)="guardarDatosSwitch($event)" (confirmar)="crearCliente()"
     [ngClass]="{ noMostrar: !mostrarModalCrear }">

@@ -15,6 +15,7 @@ export class AppComponent implements OnInit{
   alto_contenedor_tarjetas:any  = 0;
   mostrarModalCrear = false;
   mostrarModalBorrar = false;
+  mensajeErrorCrear:boolean = true;
 
   status: string = '';
   tituloCreacion:string = 'Crear Cliente';
@@ -159,6 +160,7 @@ export class AppComponent implements OnInit{
       (data) => {
         this.recargarDatos();
         this.clienteSeleccionado = this.clientes[0];
+        this.recalcularFilas();
       },
       (error) => {
         alert(error.mensaje);
@@ -236,11 +238,16 @@ export class AppComponent implements OnInit{
   crearCliente(){
     this.clienteSvc.createCliente(this.clienteCrear).subscribe(
       (data) => {
+        this.mensajeErrorCrear =false;
         this.recargarDatos();
         this.mostrarModalCrear = false;
+        setTimeout(() => {  
+          this.recalcularFilas();
+        }, 1000);
       },
       (error) =>{
         alert(error.error.message)
+        this.mensajeErrorCrear = true;
       }
     )
   }
