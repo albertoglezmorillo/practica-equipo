@@ -98,7 +98,7 @@
   display: none;
 }
 
-.crear-cliente{
+.ventana-emergente{
   height: 100vh;
   width: 100vw;
   position:absolute;
@@ -119,11 +119,3 @@
   background: #858585;
   border-radius: 5px;
 }
-
-// @media (min-width: 1000px) {
-//   .contenedor-cabecera{
-//     height: 200px;
-//     display: flex;
-//     flex-direction: column;
-//   }
-// }

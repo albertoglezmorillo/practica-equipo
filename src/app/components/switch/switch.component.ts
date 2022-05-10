@@ -7,10 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class SwitchComponent {
   @Input() etiqueta: string = '';
-  @Input() enableVal: string = 'Activo';
-  @Input() disableVal: string = 'Inactivo';
+  @Input() enableVal: string = 'Si';
+  @Input() disableVal: string = 'No';
   @Input() neutroVal: string = '-';
-  // @Input() valores: string[] = ['No Activo', 'Activo', 'Estado'];
   @Input() numeroSwitch: number = 3;
   @Input() estilo: string = 'sm';
   @Output() changed = new EventEmitter<any>();
